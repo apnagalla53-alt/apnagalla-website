@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PricingSection from '../components/PricingSection.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import { seo } from '../lib/content';
+---
+
+<BaseLayout title={seo.home.title} description="Transparent pricing for Indian retailers.">
+  <div class="page-header section">
+    <div class="container header-container">
+      <h1 class="page-title">Plans built for every stage of your business</h1>
+      <p class="page-subtitle">No hidden fees. Change plans or cancel anytime.</p>
+    </div>
+  </div>
+
+  <PricingSection />
+  <FinalCTA />
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: var(--ag-surface-lowest);
+    text-align: center;
+  }
+  .header-container {
+    max-width: 48rem;
+  }
+  .page-title {
+    font-family: var(--ag-font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .page-subtitle {
+    font-size: 1.125rem;
+    color: var(--ag-text-secondary);
+  }
+</style>

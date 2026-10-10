@@ -1,0 +1,95 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  lastUpdated: string;
+}
+
+const { title, description, lastUpdated } = Astro.props;
+---
+
+<BaseLayout title={`${title} | Apna Galla`} description={description}>
+  <div class="legal-hero section">
+    <div class="container hero-container">
+      <h1 class="page-title">{title}</h1>
+      <p class="page-subtitle">Last updated: {lastUpdated}</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container content-container">
+      <div class="prose">
+        <slot />
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>
+
+<style>
+  .legal-hero {
+    background: var(--ag-surface-lowest);
+    border-bottom: 1px solid var(--ag-divider);
+  }
+  .hero-container {
+    max-width: 48rem;
+  }
+  .page-title {
+    font-family: var(--ag-font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+  .page-subtitle {
+    font-size: 0.9375rem;
+    color: var(--ag-text-secondary);
+    font-family: var(--ag-font-mono);
+  }
+  
+  .content-container {
+    max-width: 48rem;
+  }
+  
+  .prose {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--ag-text);
+  }
+  
+  .prose :global(h2) {
+    font-family: var(--ag-font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--ag-text);
+  }
+  
+  .prose :global(h3) {
+    font-family: var(--ag-font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--ag-text);
+  }
+  
+  .prose :global(p) {
+    margin-bottom: 1.25rem;
+  }
+  
+  .prose :global(ul) {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .prose :global(li) {
+    margin-bottom: 0.5rem;
+  }
+</style>

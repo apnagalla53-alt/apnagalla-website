@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Sign Up | Apna Galla" description="Create your Apna Galla account.">
+  <div class="auth-wrapper section">
+    <div class="container auth-container">
+      <div class="auth-card">
+        <div class="auth-header">
+          <div class="logo-mark">AG</div>
+          <h1 class="auth-title">Create your Apna Galla account</h1>
+          <p class="auth-subtitle">New account registrations are currently handled via access requests in this environment.</p>
+        </div>
+        
+        <div class="auth-actions">
+          <a href="/contact?reason=demo" class="btn btn-primary btn-block">Request Access</a>
+        </div>
+        
+        <div class="auth-footer">
+          <p>Already have an account? <a href="/login">Sign in</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .auth-wrapper {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background: var(--ag-surface);
+  }
+  .auth-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .auth-card {
+    width: 100%;
+    max-width: 28rem;
+    background: var(--ag-surface-lowest);
+    border: 1px solid var(--ag-divider);
+    border-radius: var(--ag-radius-xl);
+    padding: 2.5rem;
+    box-shadow: var(--ag-shadow-md);
+  }
+  .auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .logo-mark {
+    width: 3rem;
+    height: 3rem;
+    background: var(--ag-primary-container);
+    color: var(--ag-primary-on-container);
+    font-family: var(--ag-font-heading);
+    font-weight: 700;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--ag-radius);
+    margin: 0 auto 1rem;
+  }
+  .auth-title {
+    font-family: var(--ag-font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .auth-subtitle {
+    font-size: 0.9375rem;
+    color: var(--ag-text-secondary);
+    line-height: 1.5;
+  }
+  .auth-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .btn-block {
+    width: 100%;
+    height: 3rem;
+  }
+  .auth-footer {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--ag-text-secondary);
+  }
+  .auth-footer a {
+    color: var(--ag-primary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .auth-footer a:hover {
+    text-decoration: underline;
+  }
+</style>

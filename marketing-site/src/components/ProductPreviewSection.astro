@@ -1,0 +1,246 @@
+---
+---
+
+<section class="preview-section section" aria-labelledby="preview-heading">
+  <div class="container preview-container">
+    <div class="preview-header">
+      <h2 id="preview-heading" class="preview-title">Simplified Financial Control on Your Phone</h2>
+      <p class="preview-subtitle">
+        Everything categorized in real-time. No manual day-end book reconciliations.
+      </p>
+    </div>
+
+    <div class="preview-app-card" aria-label="App Interface Preview">
+      <div class="preview-app-inner">
+        <!-- Top Galla Strip -->
+        <div class="app-card galla-strip">
+          <div class="galla-content">
+            <div>
+              <span class="app-label">Total Cash in Hand (Galla)</span>
+              <p class="app-value">₹32,450</p>
+            </div>
+            <span class="badge badge-status-available">✓ Tally Matched</span>
+          </div>
+        </div>
+
+        <!-- Khatabook Split -->
+        <div class="app-split">
+          <!-- Udhaari -->
+          <div class="app-card khata-card">
+            <div>
+              <span class="app-label highlight-warning">Customer Udhaari</span>
+              <p class="app-value">₹18,200</p>
+              <span class="app-subtext error">14 Dukandaars Pending</span>
+            </div>
+            <div class="app-action-btn small highlight-warning-bg">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              WhatsApp Reminder
+            </div>
+          </div>
+          <!-- Supplier -->
+          <div class="app-card khata-card">
+            <div>
+              <span class="app-label">Supplier Dena</span>
+              <p class="app-value">₹9,500</p>
+              <span class="app-subtext">Due in 5 Days</span>
+            </div>
+            <div class="app-action-btn small neutral">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              View Schedule
+            </div>
+          </div>
+        </div>
+
+        <!-- Touch Targets -->
+        <div class="app-actions">
+          <div class="app-action-btn primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            + New Bill
+          </div>
+          <div class="app-action-btn secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+            + Add Udhaar
+          </div>
+          <div class="app-action-btn secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
+            + Receive
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .preview-section {
+    background: var(--ag-surface-lowest);
+  }
+
+  .preview-container {
+    max-width: 48rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .preview-header {
+    text-align: left;
+  }
+
+  .preview-title {
+    font-family: var(--ag-font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ag-text);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .preview-subtitle {
+    font-size: 1rem;
+    color: var(--ag-text-secondary);
+    line-height: 1.5;
+  }
+
+  .preview-app-card {
+    background: var(--ag-surface-low);
+    border-radius: var(--ag-radius-xl);
+    padding: 1rem;
+    box-shadow: var(--ag-shadow-md);
+  }
+
+  .preview-app-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .app-card {
+    background: var(--ag-surface-lowest);
+    border-radius: var(--ag-radius-lg);
+    padding: 1rem;
+    box-shadow: var(--ag-shadow-sm);
+  }
+
+  .galla-strip .galla-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .app-label {
+    font-family: var(--ag-font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ag-secondary);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .app-label.highlight-warning {
+    color: var(--ag-tertiary);
+  }
+
+  .app-value {
+    font-family: var(--ag-font-mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ag-text);
+  }
+
+  .app-split {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .khata-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .app-subtext {
+    font-family: var(--ag-font-body);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: var(--ag-secondary);
+    display: block;
+    margin-top: 0.25rem;
+  }
+
+  .app-subtext.error {
+    color: var(--ag-error);
+  }
+
+  .app-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    font-family: var(--ag-font-body);
+    font-weight: 700;
+    border-radius: var(--ag-radius);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    cursor: default;
+  }
+
+  .app-action-btn.small {
+    font-size: 0.6875rem;
+    padding: 0.25rem 0.375rem;
+  }
+
+  .app-action-btn.highlight-warning-bg {
+    background: var(--ag-tertiary-fixed);
+    color: var(--ag-tertiary-on-fixed);
+  }
+
+  .app-action-btn.neutral {
+    background: var(--ag-surface-high);
+    color: var(--ag-text);
+  }
+
+  .app-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .app-actions .app-action-btn {
+    flex-direction: column;
+    height: 3.5rem;
+    font-size: 0.75rem;
+  }
+
+  .app-actions .primary {
+    background: var(--ag-primary);
+    color: var(--ag-primary-on);
+    box-shadow: var(--ag-shadow-md);
+  }
+
+  .app-actions .secondary {
+    background: var(--ag-surface-high);
+    color: var(--ag-text);
+    box-shadow: var(--ag-shadow-sm);
+  }
+
+  @media (min-width: 768px) {
+    .preview-title {
+      font-size: 2.25rem;
+    }
+    .preview-subtitle {
+      font-size: 1.125rem;
+    }
+    .preview-app-card {
+      padding: 1.5rem;
+    }
+    .app-value {
+      font-size: 2rem;
+    }
+  }
+</style>

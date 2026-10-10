@@ -1,0 +1,270 @@
+---
+import { askExamples } from '../lib/content';
+---
+
+<section class="ask-section section" aria-labelledby="ask-heading">
+  <div class="container ask-container">
+    <div class="ask-header">
+      <div class="ask-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>
+        <span>AI-POWERED COMMERCE</span>
+      </div>
+      <h2 id="ask-heading" class="ask-title">Ask Apna Galla</h2>
+      <p class="ask-subtitle">
+        Reports dhoondhne ke bajay business se seedha sawaal poochhiye.
+      </p>
+    </div>
+
+    <div class="ask-card">
+      <div class="ask-card-header">
+        <div class="ask-bot-info">
+          <div class="ask-bot-avatar">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+          </div>
+          <span class="ask-bot-name">Apna Galla Copilot</span>
+        </div>
+        <span class="ask-status">Online</span>
+      </div>
+
+      <div class="ask-chat">
+        <!-- User Message -->
+        <div class="chat-message user">
+          <p class="chat-bubble">
+            "Pichle hafte sabse zyada bikne wala item kaun sa tha aur kitna munafa hua?"
+          </p>
+          <span class="chat-meta">10:42 AM • Merchant</span>
+        </div>
+
+        <!-- Bot Message -->
+        <div class="chat-message bot">
+          <div class="chat-bubble">
+            <p>
+              Pichle hafte <span class="highlight-text">Fortune Sunlite Oil (1L)</span> ke <strong>142 packets</strong> bike. Kul bikri <span class="highlight-num">₹19,880</span> aur net profit <span class="highlight-num primary">₹2,840</span> raha! 📈
+            </p>
+            <p class="chat-tip">
+              💡 Tip: Agle mangalwar tak stock khatam hone ke aasaar hain. Order dene ka samay hai.
+            </p>
+          </div>
+          <span class="chat-meta">10:42 AM • Apna Galla AI</span>
+        </div>
+      </div>
+
+      <!-- Suggested Prompts -->
+      <div class="ask-prompts">
+        <div class="prompt-chip">⚡ Aaj ki total bikri?</div>
+        <div class="prompt-chip">📒 Udhari list bhejo</div>
+        <div class="prompt-chip">📦 Stock alert</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ask-section {
+    background: rgba(208, 232, 224, 0.4); /* secondary-container/40 */
+  }
+
+  .ask-container {
+    max-width: 48rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .ask-header {
+    text-align: left;
+  }
+
+  .ask-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-family: var(--ag-font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ag-tertiary);
+    margin-bottom: 0.5rem;
+  }
+
+  .ask-title {
+    font-family: var(--ag-font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ag-text);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .ask-subtitle {
+    font-size: 1rem;
+    color: var(--ag-text-secondary);
+    line-height: 1.5;
+  }
+
+  .ask-card {
+    background: var(--ag-surface-lowest);
+    border-radius: var(--ag-radius-xl);
+    padding: 1rem;
+    box-shadow: var(--ag-shadow-md);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .ask-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--ag-surface-low);
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--ag-radius-lg);
+  }
+
+  .ask-bot-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .ask-bot-avatar {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: var(--ag-primary);
+    color: var(--ag-primary-on);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ask-bot-name {
+    font-family: var(--ag-font-mono);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--ag-text);
+  }
+
+  .ask-status {
+    font-family: var(--ag-font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ag-primary);
+    background: var(--ag-surface-lowest);
+    padding: 0.125rem 0.5rem;
+    border-radius: var(--ag-radius-full);
+  }
+
+  .ask-chat {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .chat-message {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    max-width: 85%;
+  }
+
+  .chat-message.user {
+    align-self: flex-end;
+  }
+
+  .chat-message.bot {
+    align-self: flex-start;
+    max-width: 90%;
+  }
+
+  .chat-bubble {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    padding: 0.75rem 1rem;
+    border-radius: var(--ag-radius-lg);
+  }
+
+  .chat-message.user .chat-bubble {
+    background: var(--ag-primary);
+    color: var(--ag-primary-on);
+    border-top-right-radius: 0;
+  }
+
+  .chat-message.bot .chat-bubble {
+    background: var(--ag-surface-low);
+    color: var(--ag-text);
+    border-top-left-radius: 0;
+  }
+
+  .chat-meta {
+    font-family: var(--ag-font-body);
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .chat-message.user .chat-meta {
+    align-self: flex-end;
+    color: var(--ag-text-secondary);
+  }
+
+  .chat-message.bot .chat-meta {
+    align-self: flex-start;
+    color: var(--ag-text-secondary);
+  }
+
+  .highlight-text {
+    font-weight: 600;
+    color: var(--ag-primary);
+  }
+
+  .highlight-num {
+    font-family: var(--ag-font-mono);
+    font-weight: 600;
+  }
+
+  .highlight-num.primary {
+    color: var(--ag-primary);
+    font-weight: 700;
+  }
+
+  .chat-tip {
+    margin-top: 0.5rem;
+    font-weight: 500;
+    color: var(--ag-tertiary);
+  }
+
+  .ask-prompts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .prompt-chip {
+    font-family: var(--ag-font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--ag-primary);
+    background: var(--ag-surface-low);
+    padding: 0.375rem 0.75rem;
+    border-radius: var(--ag-radius-md);
+    cursor: default;
+    border: 1px solid transparent;
+  }
+
+  @media (min-width: 768px) {
+    .ask-title {
+      font-size: 2.25rem;
+    }
+    .ask-subtitle {
+      font-size: 1.125rem;
+    }
+    .ask-card {
+      padding: 1.5rem;
+    }
+  }
+</style>

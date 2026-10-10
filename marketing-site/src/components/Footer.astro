@@ -1,0 +1,252 @@
+---
+import { brand, footerLinks } from '../lib/content';
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner container">
+    <div class="footer-brand-section">
+      <div class="footer-brand">
+        <span class="footer-logo-mark" aria-hidden="true">AG</span>
+        <span class="footer-logo-text">{brand.name}</span>
+      </div>
+      <p class="footer-tagline">
+        Simple billing, stock, khata and business management for Indian shopkeepers.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-col">
+        <h3 class="footer-col-title">Product</h3>
+        <ul role="list">
+          {footerLinks.product.map((link) => (
+            <li><a href={link.href} class="footer-link">{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-col-title">Features</h3>
+        <ul role="list">
+          {footerLinks.features.map((link) => (
+            <li><a href={link.href} class="footer-link">{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-col-title">Support</h3>
+        <ul role="list">
+          {footerLinks.support.map((link) => (
+            <li><a href={link.href} class="footer-link">{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-col-title">Company & Legal</h3>
+        <ul role="list">
+          {footerLinks.company.map((link) => (
+            <li><a href={link.href} class="footer-link">{link.label}</a></li>
+          ))}
+          {footerLinks.legal.map((link) => (
+            <li><a href={link.href} class="footer-link">{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-trust">
+      <div class="footer-trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Your data stays protected on every paid plan</span>
+      </div>
+      <div class="footer-trust-item footer-trust-love">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <span>Made with care for Indian retailers</span>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copyright-info">
+        <span>© {currentYear} Apna Galla</span>
+        <span class="developer-credit">Developed by <a href="https://evolix-studio.in" target="_blank" rel="noopener noreferrer">Evolix Studio</a></span>
+      </div>
+      <div class="footer-bottom-links">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/data-security">Data Security</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--ag-inverse-surface);
+    color: var(--ag-inverse-on-surface);
+    padding-block: 3rem 2rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .footer-logo-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: var(--ag-radius);
+    background: var(--ag-primary-fixed);
+    color: #002115;
+    font-family: var(--ag-font-heading);
+    font-weight: 700;
+    font-size: 0.8125rem;
+  }
+
+  .footer-logo-text {
+    font-family: var(--ag-font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .footer-tagline {
+    font-size: 0.9375rem;
+    color: var(--ag-secondary-fixed-dim);
+    margin-top: 0.5rem;
+    max-width: 28rem;
+    line-height: 1.5;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .footer-col-title {
+    font-family: var(--ag-font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ag-tertiary-fixed-dim);
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-link {
+    font-size: 0.9375rem;
+    color: var(--ag-secondary-fixed-dim);
+    transition: color 0.15s ease;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-link:hover {
+    color: var(--ag-primary-fixed);
+  }
+
+  .footer-trust {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    background: rgba(255, 255, 255, 0.04);
+    padding: var(--ag-space-md);
+    border-radius: var(--ag-radius-lg);
+  }
+
+  .footer-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ag-primary-fixed);
+  }
+
+  .footer-trust-love {
+    color: var(--ag-tertiary-fixed-dim);
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.75rem;
+    color: var(--ag-secondary-fixed-dim);
+  }
+
+  .footer-copyright-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .developer-credit a {
+    color: var(--ag-primary-fixed);
+    font-weight: 600;
+    transition: opacity 0.2s ease;
+  }
+
+  .developer-credit a:hover {
+    opacity: 0.8;
+  }
+
+  .footer-bottom-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-bottom-links a {
+    color: var(--ag-secondary-fixed-dim);
+    transition: color 0.15s ease;
+  }
+
+  .footer-bottom-links a:hover {
+    color: var(--ag-primary-fixed);
+  }
+
+  @media (min-width: 768px) {
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2.5rem;
+    }
+    .footer-brand-section {
+      grid-column: 1;
+    }
+    .footer-links {
+      grid-column: 2;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .footer-trust {
+      grid-column: 1 / -1;
+      flex-direction: row;
+    }
+    .footer-bottom {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+</style>

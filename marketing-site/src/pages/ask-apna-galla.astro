@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AskApnaGallaSection from '../components/AskApnaGallaSection.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+---
+
+<BaseLayout title="Ask Apna Galla | AI Business Assistant" description="Ask business questions directly and get insights instantly.">
+  <div class="page-header section">
+    <div class="container header-container">
+      <h1 class="page-title">Reports mat dhoondhiye. Apne business se poochhiye.</h1>
+      <p class="page-subtitle">Available via Text and Voice (Pro), Apna Galla Copilot gives you instant insights into your retail performance.</p>
+    </div>
+  </div>
+
+  <AskApnaGallaSection />
+  <FinalCTA />
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: var(--ag-surface-lowest);
+    text-align: center;
+  }
+  .header-container {
+    max-width: 48rem;
+  }
+  .page-title {
+    font-family: var(--ag-font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .page-subtitle {
+    font-size: 1.125rem;
+    color: var(--ag-text-secondary);
+  }
+</style>

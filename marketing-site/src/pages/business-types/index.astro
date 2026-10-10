@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+import { businessTypes, seo } from '../../lib/content';
+---
+
+<BaseLayout title={`Business Types | ${seo.home.title}`} description="Apna Galla works for grocery, pharmacy, garments, hardware, electronics and more.">
+  <div class="page-header section">
+    <div class="container header-container">
+      <h1 class="page-title">Har dukaan alag. Apna Galla uske hisaab se simple.</h1>
+      <p class="page-subtitle">Built to adapt to the specific workflows of different Indian retail verticals.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="business-grid">
+        {businessTypes.map((type) => (
+          <a href={`/business-types/${type.id}`} class="business-card">
+            <div class="business-icon">{type.icon}</div>
+            <h3 class="business-title">{type.name}</h3>
+            <div class="business-tags">
+              {type.tags.slice(0, 3).map(tag => (
+                <span class="tag">{tag}</span>
+              ))}
+              {type.tags.length > 3 && <span class="tag more">+{type.tags.length - 3}</span>}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: var(--ag-surface-lowest);
+    border-bottom: 1px solid var(--ag-divider);
+    text-align: center;
+  }
+  .header-container {
+    max-width: 48rem;
+  }
+  .page-title {
+    font-family: var(--ag-font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .page-subtitle {
+    font-size: 1.125rem;
+    color: var(--ag-text-secondary);
+  }
+  
+  .business-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .business-card {
+    background: var(--ag-surface-lowest);
+    border: 1px solid var(--ag-divider);
+    border-radius: var(--ag-radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--ag-shadow-sm);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .business-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--ag-shadow-md);
+    border-color: var(--ag-primary-fixed);
+  }
+
+  .business-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .business-title {
+    font-family: var(--ag-font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .business-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    font-family: var(--ag-font-mono);
+    font-size: 0.75rem;
+    background: var(--ag-surface-low);
+    color: var(--ag-text-muted);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--ag-radius-sm);
+    border: 1px solid var(--ag-divider);
+  }
+  .tag.more {
+    background: transparent;
+    border-color: transparent;
+  }
+
+  @media (min-width: 640px) {
+    .business-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1024px) {
+    .business-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>

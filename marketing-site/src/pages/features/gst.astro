@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+---
+
+<BaseLayout title="GST Invoices | Apna Galla" description="Professional GST invoices, without clutter.">
+  <div class="feature-hero section">
+    <div class="container hero-container">
+      <span class="feature-group-badge">SELL</span>
+      <h1 class="page-title">
+        Professional GST invoices, without clutter.
+        <span class="badge badge-premium ml-3">Smart + Pro</span>
+      </h1>
+      <p class="page-subtitle">Simple, compliant invoices that look great.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="capabilities-card">
+        <h2 class="section-title">GST Capabilities</h2>
+        <ul class="check-list" role="list">
+          <li>Business GST details</li>
+          <li>Customer GST details</li>
+          <li>GST invoice</li>
+          <li>Tax breakup</li>
+          <li>CGST / SGST / IGST where implemented</li>
+          <li>A4 invoice</li>
+          <li>Print / PDF where implemented</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>
+
+<style>
+  .feature-hero {
+    background: var(--ag-surface-lowest);
+    text-align: center;
+    border-bottom: 1px solid var(--ag-divider);
+  }
+  .hero-container {
+    max-width: 48rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .feature-group-badge {
+    background: var(--ag-primary-container);
+    color: var(--ag-primary-on-container);
+    font-family: var(--ag-font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--ag-radius-full);
+    margin-bottom: 1rem;
+  }
+  .page-title {
+    font-family: var(--ag-font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .page-subtitle {
+    font-size: 1.125rem;
+    color: var(--ag-text-secondary);
+  }
+  .ml-3 {
+    margin-top: 0.5rem;
+  }
+
+  .badge-premium {
+    background: #002115;
+    color: var(--ag-primary-fixed);
+    font-size: 0.875rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--ag-radius-full);
+    font-family: var(--ag-font-body);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .capabilities-card {
+    background: var(--ag-surface-lowest);
+    border: 1px solid var(--ag-divider);
+    border-radius: var(--ag-radius-lg);
+    padding: 2rem;
+    box-shadow: var(--ag-shadow-sm);
+    max-width: 48rem;
+    margin-inline: auto;
+  }
+
+  .section-title {
+    font-family: var(--ag-font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--ag-text);
+  }
+
+  .check-list {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .check-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .check-list li::before {
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23055940' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 768px) {
+    .page-title {
+      flex-direction: row;
+    }
+    .ml-3 {
+      margin-top: 0;
+      margin-left: 0.75rem;
+    }
+    .check-list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

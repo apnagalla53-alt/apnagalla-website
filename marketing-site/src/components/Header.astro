@@ -1,0 +1,262 @@
+---
+import { brand, navLinks, cta } from '../lib/content';
+---
+
+<header class="site-header" role="banner">
+  <div class="header-inner container">
+    <!-- Logo -->
+    <a href="/" class="header-brand" aria-label={`${brand.name} — Home`}>
+      <span class="header-logo-mark" aria-hidden="true">AG</span>
+      <span class="header-logo-text">{brand.name}</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="header-nav" aria-label="Main navigation">
+      <ul class="header-nav-list" role="list">
+        {navLinks.map((link) => (
+          <li><a href={link.href} class="header-nav-link">{link.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Desktop CTA -->
+    <div class="header-actions">
+      <a href={cta.signIn.href} class="header-signin">{cta.signIn.label}</a>
+      <a href={cta.startFree.href} class="btn btn-primary header-cta">{cta.startFree.label}</a>
+    </div>
+
+    <!-- Mobile menu toggle -->
+    <button
+      class="header-menu-btn"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg class="menu-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+      <svg class="menu-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none;" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu" role="dialog" aria-label="Navigation menu" hidden>
+    <nav aria-label="Mobile navigation">
+      <ul class="mobile-nav-list" role="list">
+        {navLinks.map((link) => (
+          <li><a href={link.href} class="mobile-nav-link">{link.label}</a></li>
+        ))}
+      </ul>
+      <div class="mobile-menu-actions">
+        <a href={cta.signIn.href} class="btn btn-secondary mobile-signin">{cta.signIn.label}</a>
+        <a href={cta.startFree.href} class="btn btn-primary">{cta.startFree.label}</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.querySelector('.header-menu-btn') as HTMLButtonElement;
+  const mobileMenu = document.getElementById('mobile-menu')!;
+  const openIcon = menuBtn.querySelector('.menu-icon-open') as SVGElement;
+  const closeIcon = menuBtn.querySelector('.menu-icon-close') as SVGElement;
+
+  menuBtn.addEventListener('click', () => {
+    const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
+    menuBtn.setAttribute('aria-expanded', String(!isOpen));
+    menuBtn.setAttribute('aria-label', isOpen ? 'Open menu' : 'Close menu');
+    mobileMenu.hidden = isOpen;
+    openIcon.style.display = isOpen ? '' : 'none';
+    closeIcon.style.display = isOpen ? 'none' : '';
+    document.body.style.overflow = isOpen ? '' : 'hidden';
+  });
+
+  // Close on link click
+  mobileMenu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.setAttribute('aria-label', 'Open menu');
+      mobileMenu.hidden = true;
+      openIcon.style.display = '';
+      closeIcon.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') {
+      menuBtn.click();
+      menuBtn.focus();
+    }
+  });
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(249, 250, 246, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--ag-divider);
+    box-shadow: var(--ag-shadow-header);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--ag-header-height);
+    gap: var(--ag-space-md);
+  }
+
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .header-logo-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: var(--ag-radius);
+    background: var(--ag-primary-container);
+    color: white;
+    font-family: var(--ag-font-heading);
+    font-weight: 700;
+    font-size: 0.8125rem;
+  }
+
+  .header-logo-text {
+    font-family: var(--ag-font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--ag-text);
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .header-nav-list {
+    display: flex;
+    align-items: center;
+    gap: var(--ag-space-lg);
+  }
+
+  .header-nav-link {
+    font-family: var(--ag-font-body);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--ag-text-muted);
+    transition: color 0.15s ease;
+    padding: 0.25rem 0;
+  }
+
+  .header-nav-link:hover {
+    color: var(--ag-primary-container);
+  }
+
+  .header-actions {
+    display: none;
+    align-items: center;
+    gap: var(--ag-space-md);
+  }
+
+  .header-signin {
+    font-family: var(--ag-font-body);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--ag-primary-container);
+    transition: color 0.15s ease;
+  }
+  .header-signin:hover {
+    color: var(--ag-primary);
+  }
+
+  .header-cta {
+    height: 2.5rem;
+    padding-inline: 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .header-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--ag-text);
+    border-radius: var(--ag-radius);
+  }
+
+  /* Mobile Menu */
+  .mobile-menu {
+    position: fixed;
+    top: var(--ag-header-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--ag-surface);
+    padding: var(--ag-space-lg) var(--ag-margin-mobile);
+    overflow-y: auto;
+    z-index: 49;
+  }
+
+  .mobile-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .mobile-nav-link {
+    display: block;
+    padding: 0.875rem 0;
+    font-family: var(--ag-font-heading);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--ag-text);
+    border-bottom: 1px solid var(--ag-divider);
+    min-height: 44px;
+  }
+
+  .mobile-menu-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ag-space-sm);
+    margin-top: var(--ag-space-lg);
+  }
+
+  .mobile-menu-actions .btn {
+    width: 100%;
+    height: 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    .header-nav {
+      display: flex;
+    }
+    .header-actions {
+      display: flex;
+    }
+    .header-menu-btn {
+      display: none;
+    }
+  }
+</style>

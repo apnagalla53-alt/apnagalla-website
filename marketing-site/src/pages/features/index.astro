@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+import { features, seo } from '../../lib/content';
+
+const groupedFeatures = {
+  SELL: features.filter(f => f.group === 'SELL'),
+  STOCK: features.filter(f => f.group === 'STOCK'),
+  MONEY: features.filter(f => f.group === 'MONEY'),
+  UNDERSTAND: features.filter(f => f.group === 'UNDERSTAND'),
+};
+---
+
+<BaseLayout title={`Features | ${seo.home.title}`} description="Everything your shop needs. Nothing you don’t.">
+  <div class="page-header section">
+    <div class="container header-container">
+      <h1 class="page-title">Everything your shop needs. Nothing you don’t.</h1>
+      <p class="page-subtitle">Billing se stock, khata aur reports tak — Apna Galla everyday retail work ko simple rakhta hai.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      {Object.entries(groupedFeatures).map(([groupName, groupFeatures]) => (
+        <div class="feature-group">
+          <h2 class="group-title">{groupName}</h2>
+          <div class="features-grid">
+            {groupFeatures.map((feature) => (
+              <a href={`/features/${feature.id}`} class="feature-card">
+                <div class="feature-icon-wrapper">
+                  <!-- Simplified icon mapping for listing -->
+                  <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="16" />
+                    <line x1="8" y1="12" x2="16" y2="12" />
+                  </svg>
+                </div>
+                <div class="feature-content">
+                  <h3 class="feature-title">
+                    {feature.title}
+                    {feature.status === 'coming-soon' && <span class="badge badge-status-coming ml-2">Coming Soon</span>}
+                  </h3>
+                  <p class="feature-desc">{feature.description}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: var(--ag-surface-lowest);
+    border-bottom: 1px solid var(--ag-divider);
+    text-align: center;
+  }
+  .header-container {
+    max-width: 48rem;
+  }
+  .page-title {
+    font-family: var(--ag-font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .page-subtitle {
+    font-size: 1.125rem;
+    color: var(--ag-text-secondary);
+  }
+  .feature-group {
+    margin-bottom: 4rem;
+  }
+  .group-title {
+    font-family: var(--ag-font-body);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ag-primary);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--ag-divider);
+    padding-bottom: 0.5rem;
+  }
+  .features-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  .feature-card {
+    background: var(--ag-surface-low);
+    border: 1px solid var(--ag-divider);
+    border-radius: var(--ag-radius-lg);
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    box-shadow: var(--ag-shadow-sm);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--ag-shadow-md);
+    border-color: var(--ag-primary-fixed);
+  }
+  .feature-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background: var(--ag-secondary-container);
+    color: var(--ag-primary);
+    border-radius: var(--ag-radius);
+    flex-shrink: 0;
+  }
+  .feature-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .feature-title {
+    font-family: var(--ag-font-heading);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  .feature-desc {
+    font-size: 0.875rem;
+    color: var(--ag-text-secondary);
+    line-height: 1.5;
+  }
+  @media (min-width: 768px) {
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

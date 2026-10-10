@@ -1,0 +1,304 @@
+---
+import { brand, cta, askPreview } from '../lib/content';
+---
+
+<section class="hero-section" aria-labelledby="hero-heading">
+  <div class="hero-bg-glow-1" aria-hidden="true"></div>
+  <div class="hero-bg-glow-2" aria-hidden="true"></div>
+  
+  <div class="container hero-inner">
+    <div class="hero-badge">
+      <span aria-hidden="true">🇮🇳</span>
+      <span>Built for Indian Retail</span>
+    </div>
+    
+    <h1 id="hero-heading" class="hero-title">
+      {brand.tagline.split('.')[0]}. <span class="hero-title-highlight">{brand.tagline.split('.')[1]}.</span>
+    </h1>
+    
+    <p class="hero-subtitle">
+      {brand.description}
+    </p>
+    
+    <div class="hero-actions">
+      <a href={cta.startFree.href} class="btn btn-hero">{cta.startFree.label} →</a>
+      <a href={cta.seePlans.href} class="btn btn-ghost">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="margin-right:0.25rem;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        {cta.seePlans.label}
+      </a>
+    </div>
+
+    <!-- Interactive Ask Apna Galla Preview -->
+    <div class="hero-preview-card" aria-label="Product Preview">
+      <div class="hero-preview-header">
+        <div class="hero-preview-indicator">
+          <span class="indicator-dot"></span>
+          <span>Live Galla Register</span>
+        </div>
+        <span class="hero-preview-id">TODAY'S INVOICE #108</span>
+      </div>
+      
+      <div class="hero-preview-body">
+        <div class="preview-total-row">
+          <div class="preview-total-col">
+            <span class="preview-label">Total Sales Today</span>
+            <span class="preview-amount">₹48,250</span>
+          </div>
+          <div class="preview-trend">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+            <span>+18.4%</span>
+          </div>
+        </div>
+        
+        <div class="preview-split">
+          <div class="preview-split-col">
+            <span class="preview-label">Cash Received</span>
+            <span class="preview-value">₹32,100</span>
+          </div>
+          <div class="preview-split-col right">
+            <span class="preview-label">UPI QR Collected</span>
+            <span class="preview-value highlight">₹16,150</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    position: relative;
+    background: var(--ag-inverse-surface);
+    color: var(--ag-inverse-on-surface);
+    padding-block: 4rem 5rem;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .hero-bg-glow-1 {
+    position: absolute;
+    top: -6rem;
+    right: -5rem;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    background: rgba(18, 107, 79, 0.25);
+    filter: blur(60px);
+    pointer-events: none;
+  }
+
+  .hero-bg-glow-2 {
+    position: absolute;
+    bottom: -7rem;
+    left: -5rem;
+    width: 18rem;
+    height: 18rem;
+    border-radius: 50%;
+    background: rgba(18, 107, 79, 0.2);
+    filter: blur(60px);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 48rem;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--ag-radius-full);
+    background: var(--ag-secondary-container);
+    color: var(--ag-primary);
+    font-family: var(--ag-font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--ag-shadow-sm);
+  }
+
+  .hero-title {
+    font-family: var(--ag-font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .hero-title-highlight {
+    color: var(--ag-primary-fixed);
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    color: var(--ag-secondary-fixed-dim);
+    margin-bottom: 2rem;
+    max-width: 36rem;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 24rem;
+    margin-bottom: 3rem;
+  }
+
+  .hero-preview-card {
+    width: 100%;
+    max-width: 32rem;
+    background: rgba(46, 49, 47, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--ag-radius-xl);
+    padding: var(--ag-space-sm);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+  }
+
+  .hero-preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(226, 227, 223, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--ag-radius-md);
+    margin-bottom: 1rem;
+  }
+
+  .hero-preview-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-family: var(--ag-font-body);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ag-secondary-fixed-dim);
+  }
+
+  .indicator-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--ag-primary-fixed);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+
+  .hero-preview-id {
+    font-family: var(--ag-font-mono);
+    font-size: 0.6875rem;
+    color: var(--ag-tertiary-fixed-dim);
+  }
+
+  .preview-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+    padding-inline: 0.25rem;
+  }
+
+  .preview-total-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .preview-label {
+    font-family: var(--ag-font-body);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--ag-secondary-fixed-dim);
+    margin-bottom: 0.25rem;
+  }
+
+  .preview-amount {
+    font-family: var(--ag-font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--ag-inverse-on-surface);
+  }
+
+  .preview-trend {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: rgba(0, 81, 58, 0.4);
+    color: var(--ag-primary-fixed);
+    font-family: var(--ag-font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--ag-radius-sm);
+  }
+
+  .preview-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    background: rgba(226, 227, 223, 0.1);
+    padding: 0.75rem;
+    border-radius: var(--ag-radius-md);
+  }
+
+  .preview-split-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .preview-split-col.right {
+    text-align: right;
+  }
+
+  .preview-value {
+    font-family: var(--ag-font-mono);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ag-inverse-on-surface);
+  }
+
+  .preview-value.highlight {
+    color: var(--ag-primary-fixed);
+  }
+
+  @media (min-width: 768px) {
+    .hero-section {
+      padding-block: 6rem 8rem;
+    }
+    .hero-title {
+      font-size: 3.5rem;
+    }
+    .hero-subtitle {
+      font-size: 1.125rem;
+    }
+    .hero-actions {
+      flex-direction: row;
+      justify-content: center;
+      max-width: none;
+    }
+    .hero-actions .btn {
+      width: auto;
+      min-width: 12rem;
+    }
+  }
+</style>

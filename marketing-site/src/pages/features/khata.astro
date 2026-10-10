@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+---
+
+<BaseLayout title="Khata Management | Apna Galla" description="Udhar yaad rakhne ki zarurat nahi.">
+  <div class="feature-hero section">
+    <div class="container hero-container">
+      <span class="feature-group-badge">MONEY</span>
+      <h1 class="page-title">Udhar yaad rakhne ki zarurat nahi.</h1>
+      <p class="page-subtitle">Track customer dues and supplier payables cleanly.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="khata-card">
+          <div class="khata-header">
+            <h2 class="section-title">Customer Khata</h2>
+            <span class="khata-example">"Ramesh se kitna lena hai?"</span>
+          </div>
+          <ul class="check-list" role="list">
+            <li>Credit sale</li>
+            <li>Outstanding balance</li>
+            <li>Receive payment</li>
+            <li>Partial payment</li>
+            <li>Payment history</li>
+            <li>Bill linkage</li>
+          </ul>
+        </div>
+        
+        <div class="khata-card">
+          <div class="khata-header">
+            <h2 class="section-title">Supplier Khata</h2>
+            <span class="khata-example">"Mohan supplier ko kitna dena hai?"</span>
+          </div>
+          <ul class="check-list" role="list">
+            <li>Credit purchase</li>
+            <li>Supplier payable</li>
+            <li>Supplier payment</li>
+            <li>Partial payment</li>
+            <li>Payment history</li>
+            <li>Purchase linkage</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>
+
+<style>
+  .feature-hero {
+    background: var(--ag-surface-lowest);
+    text-align: center;
+    border-bottom: 1px solid var(--ag-divider);
+  }
+  .hero-container {
+    max-width: 48rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .feature-group-badge {
+    background: var(--ag-primary-container);
+    color: var(--ag-primary-on-container);
+    font-family: var(--ag-font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--ag-radius-full);
+    margin-bottom: 1rem;
+  }
+  .page-title {
+    font-family: var(--ag-font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .page-subtitle {
+    font-size: 1.125rem;
+    color: var(--ag-text-secondary);
+  }
+
+  .content-grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .khata-card {
+    background: var(--ag-surface-lowest);
+    border: 1px solid var(--ag-divider);
+    border-radius: var(--ag-radius-lg);
+    padding: 2rem;
+    box-shadow: var(--ag-shadow-sm);
+  }
+
+  .khata-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--ag-divider);
+  }
+
+  .section-title {
+    font-family: var(--ag-font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--ag-text);
+  }
+
+  .khata-example {
+    font-size: 0.875rem;
+    color: var(--ag-text-secondary);
+    font-style: italic;
+  }
+
+  .check-list {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .check-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .check-list li::before {
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23055940' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 768px) {
+    .content-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

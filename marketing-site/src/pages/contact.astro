@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact Us | Apna Galla" description="Request a demo, ask a pricing question, or get support.">
+  <div class="contact-hero section">
+    <div class="container hero-container">
+      <h1 class="page-title">Get in touch</h1>
+      <p class="page-subtitle">We're here to help your business grow.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container contact-container">
+      <div class="contact-card">
+        <form class="contact-form" action="/api/contact" method="POST" onsubmit="event.preventDefault(); alert('This is a static preview. Form submissions are disabled in this demo environment.');">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="mobile">Mobile Number</label>
+              <input type="tel" id="mobile" name="mobile" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email (Optional)</label>
+              <input type="email" id="email" name="email" />
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="business">Business Name</label>
+              <input type="text" id="business" name="business" required />
+            </div>
+            <div class="form-group">
+              <label for="city">City</label>
+              <input type="text" id="city" name="city" required />
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="reason">Reason for contact</label>
+            <select id="reason" name="reason" required>
+              <option value="" disabled selected>Select a reason</option>
+              <option value="demo">Want a Demo</option>
+              <option value="pricing">Pricing Question</option>
+              <option value="support">Need Support</option>
+              <option value="migration">Migration Help</option>
+              <option value="partnership">Partnership</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-hero {
+    background: var(--ag-surface-lowest);
+    text-align: center;
+    border-bottom: 1px solid var(--ag-divider);
+  }
+  .hero-container {
+    max-width: 48rem;
+  }
+  .page-title {
+    font-family: var(--ag-font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .page-subtitle {
+    font-size: 1.125rem;
+    color: var(--ag-text-secondary);
+  }
+  
+  .contact-container {
+    max-width: 40rem;
+  }
+  
+  .contact-card {
+    background: var(--ag-surface-lowest);
+    border: 1px solid var(--ag-divider);
+    border-radius: var(--ag-radius-xl);
+    padding: 2rem;
+    box-shadow: var(--ag-shadow-md);
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  label {
+    font-family: var(--ag-font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--ag-text);
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--ag-surface);
+    border: 1px solid var(--ag-divider);
+    border-radius: var(--ag-radius);
+    font-family: var(--ag-font-body);
+    font-size: 1rem;
+    color: var(--ag-text);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--ag-primary-fixed);
+    box-shadow: 0 0 0 3px rgba(162, 243, 207, 0.3);
+  }
+  
+  .submit-btn {
+    width: 100%;
+    height: 3rem;
+    font-size: 1.125rem;
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .form-row {
+      flex-direction: row;
+    }
+    .form-row > * {
+      flex: 1;
+    }
+  }
+</style>
+
+<script>
+  // Read reason from query param and preselect
+  const urlParams = new URLSearchParams(window.location.search);
+  const reasonParam = urlParams.get('reason');
+  
+  if (reasonParam) {
+    const select = document.getElementById('reason') as HTMLSelectElement;
+    if (select) {
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === reasonParam) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+    }
+  }
+</script>

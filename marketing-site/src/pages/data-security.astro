@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+---
+
+<BaseLayout title="Data Security | Apna Galla" description="How Apna Galla keeps your business data safe.">
+  <div class="security-hero section">
+    <div class="container hero-container">
+      <h1 class="page-title">Your business data, securely protected.</h1>
+      <p class="page-subtitle">We build with safety first so you can run your shop with peace of mind.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container content-container">
+      <div class="security-cards">
+        <div class="card">
+          <div class="icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Tenant-Separated Data</h3>
+          <p>Your shop data stays entirely isolated from other businesses on our platform.</p>
+        </div>
+        
+        <div class="card">
+          <div class="icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>Secure Authentication</h3>
+          <p>We use modern, secure authentication architecture. No one on our team can ever see your passwords.</p>
+        </div>
+        
+        <div class="card">
+          <div class="icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <h3>Data Portability</h3>
+          <p>Your data belongs to you. Export options are available depending on your active plan tier.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>
+
+<style>
+  .security-hero {
+    background: var(--ag-inverse-surface);
+    color: var(--ag-inverse-on-surface);
+    text-align: center;
+  }
+  .hero-container {
+    max-width: 48rem;
+  }
+  .page-title {
+    font-family: var(--ag-font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .page-subtitle {
+    font-size: 1.125rem;
+    color: var(--ag-secondary-fixed-dim);
+  }
+  
+  .content-container {
+    max-width: 64rem;
+  }
+  
+  .security-cards {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .card {
+    background: var(--ag-surface-lowest);
+    border: 1px solid var(--ag-divider);
+    border-radius: var(--ag-radius-lg);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--ag-shadow-sm);
+  }
+  
+  .icon-wrap {
+    width: 4rem;
+    height: 4rem;
+    background: var(--ag-secondary-container);
+    color: var(--ag-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+  }
+  
+  .card h3 {
+    font-family: var(--ag-font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  
+  .card p {
+    color: var(--ag-text-secondary);
+    line-height: 1.5;
+  }
+
+  @media (min-width: 768px) {
+    .security-cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

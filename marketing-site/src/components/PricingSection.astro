@@ -1,0 +1,278 @@
+---
+import { plans, dataSafety } from '../lib/content';
+---
+
+<section id="pricing" class="pricing-section section" aria-labelledby="pricing-heading">
+  <div class="container pricing-container">
+    <div class="pricing-header">
+      <span class="pricing-eyebrow">Simple & Transparent</span>
+      <h2 id="pricing-heading" class="pricing-title">Transparent Pricing, Made for Indian Retailers</h2>
+      <p class="pricing-subtitle">
+        Cancel anytime. {dataSafety.points[0]}
+      </p>
+    </div>
+
+    <div class="pricing-grid">
+      {plans.map((plan) => (
+        <div class={`plan-card ${plan.highlighted ? 'highlighted' : ''} ${plan.id === 'pro' ? 'pro-card' : ''}`}>
+          {plan.badge && (
+            <div class="plan-badge">{plan.badge}</div>
+          )}
+          {plan.id === 'pro' && (
+            <div class="plan-badge pro-badge">RECOMMENDED FOR MULTI-OUTLET</div>
+          )}
+          
+          <div class="plan-header">
+            <h3 class="plan-name">{plan.name}</h3>
+            <div class="plan-price-wrap">
+              <span class="plan-price">₹{plan.price}</span>
+              <span class="plan-period">{plan.period}</span>
+            </div>
+          </div>
+          
+          <p class="plan-positioning">{plan.positioning}</p>
+          
+          <ul class="plan-features" role="list">
+            {plan.features.map((feature) => (
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+          
+          <div class="plan-action">
+            <a href={plan.ctaHref} class={`btn btn-plan ${plan.highlighted ? 'btn-primary' : plan.id === 'pro' ? 'btn-ghost' : 'btn-secondary'}`}>
+              {plan.ctaLabel}
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="data-safety-note">
+      <p><strong>Note:</strong> {dataSafety.points[1]} {dataSafety.points[2]}</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pricing-section {
+    background: var(--ag-surface-container);
+  }
+
+  .pricing-container {
+    max-width: 64rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .pricing-header {
+    text-align: center;
+  }
+
+  .pricing-eyebrow {
+    font-family: var(--ag-font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ag-primary);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .pricing-title {
+    font-family: var(--ag-font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ag-text);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .pricing-subtitle {
+    font-size: 1rem;
+    color: var(--ag-text-secondary);
+    line-height: 1.5;
+  }
+
+  .pricing-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .plan-card {
+    background: var(--ag-surface-lowest);
+    border-radius: var(--ag-radius-xl);
+    padding: 1.5rem;
+    box-shadow: var(--ag-shadow-sm);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid var(--ag-divider);
+  }
+
+  .plan-card.highlighted {
+    background: rgba(208, 232, 224, 0.7); /* secondary-container/70 */
+    border-color: transparent;
+    box-shadow: var(--ag-shadow-md);
+  }
+
+  .plan-card.pro-card {
+    background: var(--ag-primary);
+    color: var(--ag-primary-on);
+    border-color: transparent;
+    box-shadow: var(--ag-shadow-md);
+  }
+
+  .plan-badge {
+    position: absolute;
+    top: -0.75rem;
+    left: 1.5rem;
+    background: var(--ag-primary);
+    color: var(--ag-primary-on);
+    font-family: var(--ag-font-body);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--ag-radius-full);
+  }
+
+  .pro-badge {
+    background: var(--ag-tertiary-fixed);
+    color: var(--ag-tertiary-on-fixed);
+  }
+
+  .plan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .plan-name {
+    font-family: var(--ag-font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .plan-card.highlighted .plan-name {
+    color: var(--ag-text);
+  }
+
+  .plan-card.pro-card .plan-name {
+    color: var(--ag-primary-on);
+  }
+
+  .plan-price-wrap {
+    text-align: right;
+  }
+
+  .plan-price {
+    font-family: var(--ag-font-mono);
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .plan-card.highlighted .plan-price {
+    color: var(--ag-primary);
+  }
+
+  .plan-period {
+    font-family: var(--ag-font-body);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .plan-card .plan-period {
+    color: var(--ag-secondary);
+  }
+
+  .plan-card.pro-card .plan-period {
+    color: var(--ag-primary-on-container);
+  }
+
+  .plan-positioning {
+    font-size: 0.9375rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .plan-card .plan-positioning {
+    color: var(--ag-text-secondary);
+  }
+
+  .plan-card.highlighted .plan-positioning {
+    color: var(--ag-text-muted);
+  }
+
+  .plan-card.pro-card .plan-positioning {
+    color: var(--ag-primary-on-container);
+  }
+
+  .plan-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+  }
+
+  .plan-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    line-height: 1.4;
+  }
+
+  .feature-icon {
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+  }
+
+  .plan-card .feature-icon {
+    color: var(--ag-primary);
+  }
+
+  .plan-card.pro-card .feature-icon {
+    color: var(--ag-tertiary-fixed-dim);
+  }
+
+  .plan-action {
+    margin-top: auto;
+  }
+
+  .data-safety-note {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--ag-text-secondary);
+    max-width: 40rem;
+    margin-inline: auto;
+  }
+
+  @media (min-width: 768px) {
+    .pricing-title {
+      font-size: 2.25rem;
+    }
+    .pricing-subtitle {
+      font-size: 1.125rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .pricing-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .plan-card.highlighted {
+      transform: scale(1.05);
+      z-index: 2;
+    }
+  }
+</style>

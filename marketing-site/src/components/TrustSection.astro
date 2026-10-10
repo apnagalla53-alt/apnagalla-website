@@ -1,0 +1,82 @@
+---
+import { trustValues } from '../lib/content';
+---
+
+<section class="trust-section section" aria-labelledby="trust-heading">
+  <div class="container">
+    <div class="trust-header">
+      <span class="trust-eyebrow">Built for real Indian retail workflows</span>
+      <h2 id="trust-heading" class="sr-only">Core Shop Workflows</h2>
+    </div>
+    
+    <div class="trust-grid">
+      {trustValues.map((val) => (
+        <div class="trust-item">
+          <h3 class="trust-item-title">{val.title}</h3>
+          <p class="trust-item-desc">{val.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .trust-section {
+    background: var(--ag-surface);
+    border-bottom: 1px solid var(--ag-divider);
+  }
+
+  .trust-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .trust-eyebrow {
+    font-family: var(--ag-font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ag-secondary);
+  }
+
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 48rem;
+    margin-inline: auto;
+  }
+
+  .trust-item {
+    background: var(--ag-surface-lowest);
+    padding: 1rem;
+    border-radius: var(--ag-radius-lg);
+    border: 1px solid var(--ag-divider);
+    box-shadow: var(--ag-shadow-sm);
+  }
+
+  .trust-item-title {
+    font-family: var(--ag-font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ag-text);
+    margin-bottom: 0.25rem;
+  }
+
+  .trust-item-desc {
+    font-size: 0.875rem;
+    color: var(--ag-text-secondary);
+    line-height: 1.4;
+  }
+
+  @media (min-width: 768px) {
+    .trust-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .trust-item {
+      padding: 1.5rem;
+    }
+  }
+</style>

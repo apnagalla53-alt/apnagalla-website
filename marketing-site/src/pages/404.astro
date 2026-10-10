@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page Not Found | Apna Galla" description="Yeh page nahi mila.">
+  <div class="not-found-wrapper section">
+    <div class="container not-found-container">
+      <div class="not-found-card">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Yeh page nahi mila.</h1>
+        <p class="error-subtitle">Shayad link badal gaya hai ya type karne mein galti hui hai.</p>
+        
+        <div class="error-actions">
+          <a href="/" class="btn btn-primary">Go Home</a>
+          <a href="/support" class="btn btn-secondary">Contact Support</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .not-found-wrapper {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    background: var(--ag-surface);
+  }
+  
+  .not-found-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .not-found-card {
+    text-align: center;
+    max-width: 32rem;
+    padding: 3rem;
+  }
+  
+  .error-code {
+    font-family: var(--ag-font-mono);
+    font-size: 6rem;
+    font-weight: 700;
+    color: var(--ag-primary-container);
+    line-height: 1;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 12px rgba(18, 107, 79, 0.15);
+  }
+  
+  .error-title {
+    font-family: var(--ag-font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .error-subtitle {
+    font-size: 1.125rem;
+    color: var(--ag-text-secondary);
+    margin-bottom: 2rem;
+  }
+  
+  .error-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  @media (max-width: 480px) {
+    .error-actions {
+      flex-direction: column;
+    }
+  }
+</style>

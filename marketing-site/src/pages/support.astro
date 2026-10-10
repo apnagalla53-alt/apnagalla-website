@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+---
+
+<BaseLayout title="Support | Apna Galla" description="Get help with billing, stock, khata, GST, and reports.">
+  <div class="support-hero section">
+    <div class="container hero-container">
+      <h1 class="page-title">How can we help?</h1>
+      <p class="page-subtitle">Find answers to common questions or reach out to our team.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="support-grid">
+        <a href="/features/billing" class="support-card">
+          <h3>Billing</h3>
+          <p>Learn about cash, UPI, Udhar, and receipt generation.</p>
+        </a>
+        <a href="/features/inventory" class="support-card">
+          <h3>Stock & Inventory</h3>
+          <p>Manage items, units, purchases, and low stock alerts.</p>
+        </a>
+        <a href="/features/khata" class="support-card">
+          <h3>Khata Management</h3>
+          <p>Track customer dues and supplier payables easily.</p>
+        </a>
+        <a href="/features/gst" class="support-card">
+          <h3>GST Invoices</h3>
+          <p>Set up business GST details and generate compliant invoices.</p>
+        </a>
+        <a href="/features/reports" class="support-card">
+          <h3>Reports & Profit</h3>
+          <p>Understand your business performance and COGS.</p>
+        </a>
+        <a href="/contact?reason=support" class="support-card highlight">
+          <h3>Contact Support</h3>
+          <p>Need direct help? Reach out to our team.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>
+
+<style>
+  .support-hero {
+    background: var(--ag-primary);
+    color: var(--ag-primary-on);
+    text-align: center;
+  }
+  .hero-container {
+    max-width: 48rem;
+  }
+  .page-title {
+    font-family: var(--ag-font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .page-subtitle {
+    font-size: 1.125rem;
+    color: var(--ag-primary-on-container);
+  }
+  
+  .support-grid {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 64rem;
+    margin-inline: auto;
+  }
+  
+  .support-card {
+    background: var(--ag-surface-lowest);
+    border: 1px solid var(--ag-divider);
+    border-radius: var(--ag-radius-lg);
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--ag-shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .support-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--ag-shadow-md);
+    border-color: var(--ag-primary-fixed);
+  }
+  
+  .support-card.highlight {
+    background: var(--ag-primary-container);
+    color: var(--ag-primary-on);
+    border-color: transparent;
+  }
+  
+  .support-card h3 {
+    font-family: var(--ag-font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .support-card p {
+    font-size: 0.875rem;
+    color: var(--ag-text-secondary);
+  }
+  
+  .support-card.highlight p {
+    color: var(--ag-primary-on-container);
+  }
+
+  @media (min-width: 640px) {
+    .support-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1024px) {
+    .support-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>

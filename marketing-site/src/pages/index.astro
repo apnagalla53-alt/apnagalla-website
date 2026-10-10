@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import TrustSection from '../components/TrustSection.astro';
+import ProductPreviewSection from '../components/ProductPreviewSection.astro';
+import FeatureSection from '../components/FeatureSection.astro';
+import AskApnaGallaSection from '../components/AskApnaGallaSection.astro';
+import PricingSection from '../components/PricingSection.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import { seo } from '../lib/content';
+---
+
+<BaseLayout 
+  title={seo.home.title}
+  description={seo.home.description}
+>
+  <Hero />
+  <TrustSection />
+  <ProductPreviewSection />
+  <FeatureSection />
+  <AskApnaGallaSection />
+  <PricingSection />
+  <FinalCTA />
+</BaseLayout>

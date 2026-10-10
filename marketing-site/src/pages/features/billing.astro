@@ -1,0 +1,200 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+---
+
+<BaseLayout title="Billing | Apna Galla" description="Fast billing without ERP complexity.">
+  <div class="feature-hero section">
+    <div class="container hero-container">
+      <span class="feature-group-badge">SELL</span>
+      <h1 class="page-title">Fast billing without ERP complexity.</h1>
+      <p class="page-subtitle">Simple, quick, and built for your shop's counter.</p>
+      
+      <div class="hero-actions mt-6">
+        <a href="/pricing" class="btn btn-secondary">See Pricing</a>
+        <a href="/signup" class="btn btn-primary">Start Free</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="capabilities-card">
+          <h2 class="section-title">Capabilities</h2>
+          <ul class="check-list" role="list">
+            <li>Cash billing</li>
+            <li>UPI billing</li>
+            <li>Udhar billing</li>
+            <li>Item search</li>
+            <li>Quantity</li>
+            <li>Customer selection</li>
+            <li>Discount</li>
+            <li>GST/tax where applicable</li>
+            <li>Receipt</li>
+            <li>Bill history</li>
+            <li>Returns</li>
+            <li>Stock deduction</li>
+          </ul>
+        </div>
+        
+        <div class="workflow-card">
+          <h2 class="section-title">Simple Workflow</h2>
+          <div class="workflow-steps">
+            <div class="step">Add Items</div>
+            <div class="step-arrow">↓</div>
+            <div class="step">Select Customer if needed</div>
+            <div class="step-arrow">↓</div>
+            <div class="step">Cash / UPI / Udhar</div>
+            <div class="step-arrow">↓</div>
+            <div class="step">Save Bill</div>
+            <div class="step-arrow">↓</div>
+            <div class="step split">
+              <span>Stock updates</span>
+              <span>Khata updates if Udhar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>
+
+<style>
+  .feature-hero {
+    background: var(--ag-surface-lowest);
+    text-align: center;
+    border-bottom: 1px solid var(--ag-divider);
+  }
+  .hero-container {
+    max-width: 48rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .feature-group-badge {
+    background: var(--ag-primary-container);
+    color: var(--ag-primary-on-container);
+    font-family: var(--ag-font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--ag-radius-full);
+    margin-bottom: 1rem;
+  }
+  .page-title {
+    font-family: var(--ag-font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .page-subtitle {
+    font-size: 1.125rem;
+    color: var(--ag-text-secondary);
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .mt-6 {
+    margin-top: 1.5rem;
+  }
+
+  .content-grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .capabilities-card, .workflow-card {
+    background: var(--ag-surface-lowest);
+    border: 1px solid var(--ag-divider);
+    border-radius: var(--ag-radius-lg);
+    padding: 2rem;
+    box-shadow: var(--ag-shadow-sm);
+  }
+
+  .section-title {
+    font-family: var(--ag-font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--ag-text);
+  }
+
+  .check-list {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .check-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .check-list li::before {
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23055940' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+  }
+
+  .workflow-steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .step {
+    background: var(--ag-surface);
+    border: 1px solid var(--ag-divider);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--ag-radius);
+    font-weight: 600;
+    width: 100%;
+    max-width: 20rem;
+    text-align: center;
+  }
+
+  .step.split {
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .step.split span {
+    background: var(--ag-primary-container);
+    color: var(--ag-primary-on-container);
+    border: 1px solid var(--ag-primary);
+    padding: 0.75rem 1rem;
+    border-radius: var(--ag-radius);
+    flex: 1;
+  }
+
+  .step-arrow {
+    color: var(--ag-primary);
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .content-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .check-list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

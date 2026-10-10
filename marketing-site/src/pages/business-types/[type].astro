@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+import { businessTypes } from '../../lib/content';
+
+export function getStaticPaths() {
+  return businessTypes.map((type) => ({
+    params: { type: type.id },
+    props: { type },
+  }));
+}
+
+const { type } = Astro.props;
+---
+
+<BaseLayout title={`${type.name} Software | Apna Galla`} description={`Manage billing, stock, and khata for your ${type.name} with Apna Galla.`}>
+  <div class="type-hero section">
+    <div class="container type-hero-container">
+      <div class="type-icon">{type.icon}</div>
+      <h1 class="type-hero-title">{type.name} Software</h1>
+      <p class="type-hero-subtitle">
+        Tailored features like {type.tags.slice(0, 3).join(', ')} to run your {type.name.toLowerCase()} efficiently.
+      </p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="tags-grid">
+        {type.tags.map(tag => (
+          <div class="tag-card">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tag-icon">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <h3 class="tag-title">{tag}</h3>
+            <p class="tag-desc">Integrated seamlessly into your daily workflow.</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>
+
+<style>
+  .type-hero {
+    background: var(--ag-surface-lowest);
+    text-align: center;
+    border-bottom: 1px solid var(--ag-divider);
+  }
+  .type-hero-container {
+    max-width: 48rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .type-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    background: var(--ag-surface-low);
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: var(--ag-shadow-sm);
+  }
+  .type-hero-title {
+    font-family: var(--ag-font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .type-hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--ag-text-secondary);
+  }
+  
+  .tags-grid {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 64rem;
+    margin-inline: auto;
+  }
+  .tag-card {
+    background: var(--ag-surface-lowest);
+    border: 1px solid var(--ag-divider);
+    border-radius: var(--ag-radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--ag-shadow-sm);
+  }
+  .tag-icon {
+    color: var(--ag-primary);
+    margin-bottom: 1rem;
+  }
+  .tag-title {
+    font-family: var(--ag-font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+  }
+  .tag-desc {
+    font-size: 0.875rem;
+    color: var(--ag-text-secondary);
+  }
+
+  @media (min-width: 640px) {
+    .tags-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1024px) {
+    .tags-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>

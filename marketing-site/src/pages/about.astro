@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+---
+
+<BaseLayout title="About Us | Apna Galla" description="Built for the way Indian shops actually work.">
+  <div class="about-hero section">
+    <div class="container hero-container">
+      <h1 class="page-title">Built for the way Indian shops actually work.</h1>
+      <p class="page-subtitle">Fast billing, simple khata, flexible stock, and practical retail workflows.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container content-container">
+      <div class="prose">
+        <p>At Apna Galla, we understand that Indian retail is unique. You don't need complicated accounting software with hundreds of features you'll never use. You need a fast, reliable way to manage your daily shop operations.</p>
+        
+        <h2>Our Core Principles</h2>
+        <ul>
+          <li><strong>Speed is everything:</strong> If a system takes longer than a physical calculator and notebook, it's not working for you. Our billing is designed to be lightning fast.</li>
+          <li><strong>Less typing, more doing:</strong> We minimize data entry so you can focus on serving customers.</li>
+          <li><strong>Practical Khata:</strong> We know Udhar is a reality of business. Managing customer and supplier dues should be straightforward and stress-free.</li>
+          <li><strong>Ask, don't search:</strong> Instead of digging through complex report menus, you should be able to just ask your business questions directly.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>
+
+<style>
+  .about-hero {
+    background: var(--ag-surface-lowest);
+    text-align: center;
+    border-bottom: 1px solid var(--ag-divider);
+  }
+  .hero-container {
+    max-width: 48rem;
+  }
+  .page-title {
+    font-family: var(--ag-font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .page-subtitle {
+    font-size: 1.125rem;
+    color: var(--ag-text-secondary);
+  }
+  
+  .content-container {
+    max-width: 42rem;
+  }
+  
+  .prose {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--ag-text);
+  }
+  
+  .prose p {
+    margin-bottom: 1.5rem;
+  }
+  
+  .prose h2 {
+    font-family: var(--ag-font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: var(--ag-primary);
+  }
+  
+  .prose ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .prose li::marker {
+    color: var(--ag-primary-fixed);
+  }
+</style>

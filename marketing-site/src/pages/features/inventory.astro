@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+---
+
+<BaseLayout title="Stock & Inventory | Apna Galla" description="Stock kitna hai — clearly dekhiye.">
+  <div class="feature-hero section">
+    <div class="container hero-container">
+      <span class="feature-group-badge">STOCK</span>
+      <h1 class="page-title">Stock kitna hai — clearly dekhiye.</h1>
+      <p class="page-subtitle">Know exactly what you have and what you need.</p>
+      
+      <div class="hero-actions mt-6">
+        <a href="/pricing" class="btn btn-secondary">See Pricing</a>
+        <a href="/features/advanced-inventory" class="btn btn-primary">Advanced Inventory</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="capabilities-card">
+        <h2 class="section-title">Inventory Capabilities</h2>
+        <ul class="check-list" role="list">
+          <li>Items</li>
+          <li>Current stock</li>
+          <li>Low stock</li>
+          <li>Opening stock</li>
+          <li>Purchases increase stock</li>
+          <li>Sales reduce stock</li>
+          <li>Returns restore stock</li>
+          <li>Multi-unit where available</li>
+          <li>Variants where available</li>
+          <li>Batch/expiry where available</li>
+          <li>Stock history</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>
+
+<style>
+  .feature-hero {
+    background: var(--ag-surface-lowest);
+    text-align: center;
+    border-bottom: 1px solid var(--ag-divider);
+  }
+  .hero-container {
+    max-width: 48rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .feature-group-badge {
+    background: var(--ag-primary-container);
+    color: var(--ag-primary-on-container);
+    font-family: var(--ag-font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--ag-radius-full);
+    margin-bottom: 1rem;
+  }
+  .page-title {
+    font-family: var(--ag-font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .page-subtitle {
+    font-size: 1.125rem;
+    color: var(--ag-text-secondary);
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .mt-6 {
+    margin-top: 1.5rem;
+  }
+
+  .capabilities-card {
+    background: var(--ag-surface-lowest);
+    border: 1px solid var(--ag-divider);
+    border-radius: var(--ag-radius-lg);
+    padding: 2rem;
+    box-shadow: var(--ag-shadow-sm);
+    max-width: 48rem;
+    margin-inline: auto;
+  }
+
+  .section-title {
+    font-family: var(--ag-font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--ag-text);
+  }
+
+  .check-list {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .check-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .check-list li::before {
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23055940' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 768px) {
+    .check-list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

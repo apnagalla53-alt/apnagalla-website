@@ -1,0 +1,108 @@
+---
+import { cta } from '../lib/content';
+---
+
+<section class="cta-section section">
+  <div class="container cta-container">
+    <div class="cta-icon">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><mpath d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+    </div>
+    
+    <h2 class="cta-title">Ready to Upgrade Your Dukan to Smart Vyapar?</h2>
+    
+    <p class="cta-subtitle">
+      No credit card required to start. Simple and secure billing.
+    </p>
+    
+    <div class="cta-actions">
+      <a href={cta.startFree.href} class="btn btn-hero">{cta.startFree.label}</a>
+      <span class="cta-note">Compatible with Android, iOS, Windows & Thermal Printers</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    background: var(--ag-primary);
+    color: var(--ag-primary-on);
+    text-align: center;
+    padding-block: 4rem 5rem;
+  }
+
+  .cta-container {
+    max-width: 48rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .cta-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--ag-primary-container);
+    color: var(--ag-primary-on-container);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    box-shadow: var(--ag-shadow-sm);
+  }
+
+  .cta-title {
+    font-family: var(--ag-font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .cta-subtitle {
+    font-size: 1rem;
+    color: var(--ag-primary-on-container);
+    max-width: 28rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 20rem;
+  }
+
+  .cta-actions .btn {
+    width: 100%;
+  }
+
+  .cta-note {
+    font-family: var(--ag-font-body);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ag-primary-on-container);
+  }
+
+  @media (min-width: 768px) {
+    .cta-section {
+      padding-block: 6rem;
+    }
+    .cta-title {
+      font-size: 2.25rem;
+    }
+    .cta-subtitle {
+      font-size: 1.125rem;
+    }
+    .cta-actions {
+      max-width: auto;
+    }
+    .cta-actions .btn {
+      width: auto;
+      min-width: 16rem;
+    }
+  }
+</style>
