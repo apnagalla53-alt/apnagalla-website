@@ -7,7 +7,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container auth-container">
       <div class="auth-card">
         <div class="auth-header">
-          <div class="logo-mark">AG</div>
+          <a href="/" class="auth-logo-link" aria-label="Apna Galla Home">
+            <img src="/logo.png" alt="Apna Galla" width="160" height="130" class="auth-logo-img" />
+          </a>
           <h1 class="auth-title">Create your Apna Galla account</h1>
           <p class="auth-subtitle">New account registrations are currently handled via access requests in this environment.</p>
         </div>
@@ -49,19 +51,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     text-align: center;
     margin-bottom: 2rem;
   }
-  .logo-mark {
-    width: 3rem;
-    height: 3rem;
-    background: var(--ag-primary-container);
-    color: var(--ag-primary-on-container);
-    font-family: var(--ag-font-heading);
-    font-weight: 700;
-    font-size: 1.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--ag-radius);
-    margin: 0 auto 1rem;
+  .auth-logo-link {
+    display: inline-block;
+    margin-bottom: 1.25rem;
+    transition: transform 0.2s ease;
+  }
+  .auth-logo-link:hover {
+    transform: scale(1.03);
+  }
+  .auth-logo-img {
+    width: 9.5rem;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
   }
   .auth-title {
     font-family: var(--ag-font-heading);

@@ -7,7 +7,7 @@ const currentYear = new Date().getFullYear();
   <div class="footer-inner container">
     <div class="footer-brand-section">
       <div class="footer-brand">
-        <span class="footer-logo-mark" aria-hidden="true">AG</span>
+        <img src="/apple-touch-icon.png" alt="" width="36" height="36" class="footer-logo-img" />
         <span class="footer-logo-text">{brand.name}</span>
       </div>
       <p class="footer-tagline">
@@ -97,18 +97,12 @@ const currentYear = new Date().getFullYear();
     gap: 0.5rem;
   }
 
-  .footer-logo-mark {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2rem;
-    height: 2rem;
+  .footer-logo-img {
+    width: 2.25rem;
+    height: 2.25rem;
     border-radius: var(--ag-radius);
-    background: var(--ag-primary-fixed);
-    color: #002115;
-    font-family: var(--ag-font-heading);
-    font-weight: 700;
-    font-size: 0.8125rem;
+    object-fit: contain;
+    flex-shrink: 0;
   }
 
   .footer-logo-text {

@@ -6,7 +6,7 @@ import { brand, navLinks, cta } from '../lib/content';
   <div class="header-inner container">
     <!-- Logo -->
     <a href="/" class="header-brand" aria-label={`${brand.name} — Home`}>
-      <span class="header-logo-mark" aria-hidden="true">AG</span>
+      <img src="/logo-mark.png" alt="" width="32" height="32" class="header-logo-img" />
       <span class="header-logo-text">{brand.name}</span>
     </a>
 
@@ -126,18 +126,11 @@ import { brand, navLinks, cta } from '../lib/content';
     flex-shrink: 0;
   }
 
-  .header-logo-mark {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: var(--ag-radius);
-    background: var(--ag-primary-container);
-    color: white;
-    font-family: var(--ag-font-heading);
-    font-weight: 700;
-    font-size: 0.8125rem;
+  .header-logo-img {
+    width: 2.25rem;
+    height: 2.25rem;
+    object-fit: contain;
+    flex-shrink: 0;
   }
 
   .header-logo-text {
