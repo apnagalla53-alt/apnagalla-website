@@ -1,0 +1,35 @@
+---
+import { config } from '../lib/content';
+interface Props { signup?:boolean }
+const signup=Astro.props.signup||false;
+---
+<section class="website-account" data-signup={signup?'true':'false'} data-app-url={config.appUrl} data-api-url={config.apiUrl}>
+  <p class="account-explanation">{signup?'Create one account for the website and your shop software. Next, we’ll help you set up your business.':'Sign in once here, then continue directly to your shop software.'}</p>
+  <div class="account-status" data-status role="status" aria-live="polite">Checking sign-in options…</div>
+  <div data-error class="account-error" role="alert" hidden></div>
+  {signup&&<label class="account-terms"><input type="checkbox" data-terms/> <span>I agree to the <a href="/terms">Terms</a> and <a href="/privacy">Privacy Policy</a>.</span></label>}
+  <div data-google class="website-google"></div>
+  <button type="button" data-google-retry class="btn btn-secondary btn-block" hidden>Retry Google sign-in</button>
+  {!signup&&<>
+    <div class="account-divider">or use your shop password</div>
+    <form data-password-form>
+      <label>Username or email<input name="username" type="text" required autocomplete="username" maxlength="255" placeholder="Your shop username or email"/></label>
+      <label>Password<input name="password" type="password" required autocomplete="current-password" maxlength="255" placeholder="Your password"/></label>
+      <button type="submit" class="btn btn-primary btn-block">Sign in and open my shop</button>
+    </form>
+  </>}
+  <p data-continue hidden><a class="btn btn-primary btn-block" href={`${config.appUrl.replace(/\/$/,'')}/auth/continue`}>Continue to my shop</a></p>
+  <p class="account-assistance">Already have a shop account with a password? Use that password to sign in, then connect Google in the software’s Security settings.</p>
+</section>
+<script>
+  import { initializeWebsiteAccount } from '../scripts/account-access';
+  document.querySelectorAll<HTMLElement>('.website-account').forEach(initializeWebsiteAccount);
+</script>
+<style>
+  .website-account :global([hidden]){display:none!important}
+  .account-explanation,.account-assistance{color:var(--ag-text-secondary);font-size:.9rem;line-height:1.6;margin-bottom:1rem}
+  .account-assistance{margin-top:1rem;font-size:.8rem}.account-status{font-size:.875rem;margin:.8rem 0}.account-error{border:1px solid #efb5b5;background:#fff4f3;border-radius:.75rem;padding:.75rem;margin-bottom:1rem;color:#922b2b}
+  .account-terms{display:flex;gap:.6rem;align-items:flex-start;font-size:.875rem;margin:1rem 0}.account-terms input{margin-top:.25rem}.account-terms a{color:var(--ag-primary)}
+  form{display:grid;gap:1rem}form label{display:grid;gap:.45rem;font-weight:600;font-size:.9rem}form input{width:100%;padding:.8rem 1rem;border:1px solid var(--ag-divider);border-radius:.75rem;background:var(--ag-surface-lowest);color:var(--ag-text-primary);font:inherit}form input:focus{outline:2px solid var(--ag-primary);outline-offset:2px}
+  .account-divider{font-size:.8rem;text-align:center;color:var(--ag-text-secondary);margin:1.3rem 0}.website-google{display:flex;justify-content:center;min-height:0}button:disabled{opacity:.6;cursor:wait}.btn-block{width:100%;min-height:3rem}
+</style>

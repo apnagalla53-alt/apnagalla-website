@@ -4,14 +4,14 @@
  */
 
 export const config = {
-  appUrl: import.meta.env.PUBLIC_APP_URL ?? '/login',
+  appUrl: import.meta.env.PUBLIC_APP_URL ?? 'https://app.apnagalla.in',
   apiUrl: import.meta.env.PUBLIC_API_URL ?? '',
-  siteUrl: import.meta.env.PUBLIC_SITE_URL ?? 'https://apnagalla.com',
+  siteUrl: import.meta.env.PUBLIC_SITE_URL ?? 'https://apnagalla.in',
 };
 
 export const brand = {
   name: 'Apna Galla',
-  domain: 'ApnaGalla.com',
+  domain: 'ApnaGalla.in',
   tagline: 'Dukaan ka hisaab. Bas poochho.',
   taglineSecondary: 'Bill banao. Khata rakho. Stock sambhalo. Business se kuch bhi poochho.',
   description: 'Billing, stock, khata, purchases, expenses aur business ke sawaalon ka jawab — ek simple app mein.',
@@ -51,14 +51,14 @@ export const features: Feature[] = [
   { id: 'billing', group: 'SELL', title: 'Billing', description: 'Cash, UPI aur Udhar ke saath fast billing.', icon: 'receipt', status: 'available', hero: 'Fast billing without ERP complexity.', cover: ['Quick item search', 'Quantities', 'Cash/UPI/Udhar', 'Customer selection', 'Discounts', 'Taxes', 'Receipts', 'Stock update'] },
   { id: 'gst', group: 'SELL', title: 'GST Invoices', description: 'Professional GST invoices, without clutter.', icon: 'receipt', status: 'available', hero: 'Professional GST invoices, without clutter.', cover: ['Business GST details', 'Customer GST details', 'Tax breakup (CGST/SGST/IGST)', 'A4 Invoice Print/PDF'] },
   { id: 'inventory', group: 'STOCK', title: 'Inventory', description: 'Stock, low stock, units aur advanced inventory tools.', icon: 'package', status: 'available', hero: 'Stock kitna hai — clearly dekhiye.', cover: ['Current stock', 'Low stock alerts', 'Opening stock', 'Purchase stock', 'Sale deduction', 'Stock movement'] },
-  { id: 'advanced-inventory', group: 'STOCK', title: 'Advanced Inventory', description: 'Variants, batch, expiry, and more.', icon: 'package', status: 'available', hero: 'Powerful tools for complex retail.', cover: ['Variants', 'Multi-unit', 'Weight/Length/Area', 'Batch/Expiry/FEFO', 'Serial/Warranty', 'Multiple Locations'] },
+  { id: 'advanced-inventory', group: 'STOCK', title: 'Advanced Inventory', description: 'Variants, batch, expiry, and more.', icon: 'package', status: 'available', hero: 'Powerful tools for complex retail.', cover: ['Variants', 'Multi-unit', 'Weight/Length/Area', 'Batch/Expiry/FEFO', 'Serial/Warranty (Pro)', 'Multiple Locations (Future Premium)'] },
   { id: 'purchases', group: 'STOCK', title: 'Purchases', description: 'Track what comes in and where money goes.', icon: 'wallet', status: 'available', hero: 'Keep track of supplier purchases.', cover: ['Supplier selection', 'Itemized purchase', 'Cash/Credit purchase', 'Stock increase', 'Need List to Purchase'] },
   { id: 'khata', group: 'MONEY', title: 'Khata', description: 'Customer aur supplier dues ko clearly track kijiye.', icon: 'book', status: 'available', hero: 'Udhar yaad rakhne ki zarurat nahi.', cover: ['Credit sales', 'Outstanding balance', 'Partial payments', 'Payment history', 'Supplier payables'] },
   { id: 'expenses', group: 'MONEY', title: 'Expenses', description: 'Everyday shop expenses recorded simply.', icon: 'wallet', status: 'available', hero: 'Track all your business expenses.', cover: ['Categories', 'Payment method', 'Expense history', 'Reports'] },
   { id: 'daily-galla', group: 'MONEY', title: 'Daily Galla', description: 'Daily cash reconciliation.', icon: 'wallet', status: 'available', hero: 'Aaj galle mein kitna cash hona chahiye?', cover: ['Opening Cash', 'Cash Sales', 'Dues Received in Cash', 'Cash Expenses'] },
   { id: 'profit', group: 'MONEY', title: 'Profit / COGS', description: 'Understand your net business profit.', icon: 'chart', status: 'available', hero: 'Sirf sale nahi. Business ka profit samajhiye.', cover: ['Gross Profit', 'COGS', 'Operating Expenses', 'Net Business Profit'] },
   { id: 'reports', group: 'UNDERSTAND', title: 'Reports', description: 'Sales, expenses aur plan-supported profit reports.', icon: 'chart', status: 'available', hero: 'All your business numbers in one place.', cover: ['Sales reports', 'Purchases reports', 'Expense reports', 'Stock reports', 'GST reports'] },
-  { id: 'ask-apna-galla', group: 'UNDERSTAND', title: 'Ask Apna Galla', description: 'Reports dhoondhne ke bajay business se seedha sawaal poochhiye.', icon: 'message-circle', status: 'available', hero: 'Reports mat dhoondhiye. Apne business se poochhiye.', cover: ['Text questions', 'Business insights', 'Voice questions (Pro)'] }
+  { id: 'ask-apna-galla', group: 'UNDERSTAND', title: 'Ask Apna Galla', description: 'Reports dhoondhne ke bajay business se seedha sawaal poochhiye.', icon: 'message-circle', status: 'available', hero: 'Reports mat dhoondhiye. Apne business se poochhiye.', cover: ['Text questions', 'Business insights (Smart and Pro)', 'Voice questions (Coming Soon)'] }
 ];
 
 export const askExamples = {
@@ -68,14 +68,14 @@ export const askExamples = {
 };
 
 export const plans = [
-  { id: 'starter', name: 'Starter', price: 75, period: '/month', positioning: 'Run your shop', highlighted: false, features: ['Billing', 'Cash / UPI / Udhar', 'Inventory', 'Customer Khata', 'Supplier Khata', 'Purchases', 'Expenses', 'Daily Galla', 'Need List', 'Basic Reports', 'Basic Text Ask Apna Galla', 'Item Export', 'Stock Export', 'Automatic Data Safety'], ctaLabel: 'Choose Starter', ctaHref: '/signup' },
-  { id: 'smart', name: 'Smart', price: 120, period: '/month', positioning: 'Understand your shop', badge: 'MOST POPULAR', highlighted: true, features: ['Everything in Starter', 'GST Invoices', 'Profit / COGS', 'Advanced Reports', 'Business Insights', 'Variants & Multi-unit', 'Weight / Volume / Length / Area', 'Batch / Expiry / FEFO', 'Bundles / Modifiers', 'Item Images', 'Wastage', 'Smart Staff Controls', 'Customer / Supplier / Khata Exports', 'Operational Exports'], ctaLabel: 'Get Smart', ctaHref: '/signup' },
-  { id: 'pro', name: 'Pro', price: 210, period: '/month', positioning: 'Advanced control + Voice', highlighted: false, features: ['Everything in Smart', 'Voice Ask Apna Galla', 'Multiple Locations / Godowns', 'Transfers', 'Serial / Warranty', 'Advanced Pricing', 'Advanced Staff Controls', 'Complete Business Export'], ctaLabel: 'Choose Pro', ctaHref: '/signup' }
+  { id: 'starter', name: 'Starter', price: 75, period: '/month', positioning: 'Run your shop', highlighted: false, features: ['Billing', 'Cash / UPI / Udhar', 'Inventory', 'Customer & Supplier Khata', 'Purchases & Expenses', 'Daily Galla', 'Need List', 'Basic Reports', 'Text Ask Apna Galla', 'Items, Stock & Sales Export', 'Backup service access'], ctaLabel: 'Choose Starter', ctaHref: '/signup' },
+  { id: 'smart', name: 'Smart', price: 120, period: '/month', positioning: 'Run it better. Understand your business.', badge: 'MOST POPULAR', highlighted: true, features: ['Everything in Starter', 'Item Photos', 'GST Invoices', 'Profit & COGS', 'Business Insights', 'Advanced Inventory', '2 Staff Accounts', 'Better Reports & Exports'], ctaLabel: 'Get Smart', ctaHref: '/signup' },
+  { id: 'pro', name: 'Pro', price: 210, period: '/month', positioning: 'Advanced Control', highlighted: false, features: ['Everything in Smart', 'Serial & Warranty', 'Advanced Staff Controls', '5 Staff Accounts', 'Complete Business Export'], ctaLabel: 'Choose Pro', ctaHref: '/signup' }
 ];
 
 export const dataSafety = {
-  headline: 'Your business data, always protected.',
-  points: ['Automatic data safety is included on every paid plan.', 'Your shop data stays isolated from other businesses.', 'Export options depend on your plan.']
+  headline: 'Your business data stays yours.',
+  points: ['Backup service access is included; protection requires configured, verified backups.', 'Your shop data stays isolated from other businesses.', 'Export options depend on your plan; account-exit portability remains available.']
 };
 
 export const footerLinks = {

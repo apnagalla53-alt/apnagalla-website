@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AccountAccess from '../components/AccountAccess.astro';
 ---
 
 <BaseLayout title="Sign Up | Apna Galla" description="Create your Apna Galla account.">
@@ -11,11 +12,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <img src="/logo.png" alt="Apna Galla" width="160" height="130" class="auth-logo-img" />
           </a>
           <h1 class="auth-title">Create your Apna Galla account</h1>
-          <p class="auth-subtitle">New account registrations are currently handled via access requests in this environment.</p>
+          <p class="auth-subtitle">Create your account with Google and start setting up your shop.</p>
         </div>
         
         <div class="auth-actions">
-          <a href="/contact?reason=demo" class="btn btn-primary btn-block">Request Access</a>
+          <AccountAccess signup/>
         </div>
         
         <div class="auth-footer">
