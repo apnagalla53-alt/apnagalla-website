@@ -7,6 +7,7 @@ const signup=Astro.props.signup||false;
   <p class="account-explanation">{signup?'Create one account for the website and your shop software. Next, we’ll help you set up your business.':'Sign in once here, then continue directly to your shop software.'}</p>
   <div class="account-status" data-status role="status" aria-live="polite">Checking sign-in options…</div>
   <div data-error class="account-error" role="alert" hidden></div>
+  <p data-create-account hidden>New to Apna Galla? <a class="btn btn-primary btn-block" href="/signup">Create account &amp; get demo</a></p>
   {signup&&<label class="account-terms"><input type="checkbox" data-terms/> <span>I agree to the <a href="/terms">Terms</a> and <a href="/privacy">Privacy Policy</a>.</span></label>}
   <div data-google class="website-google"></div>
   <button type="button" data-google-retry class="btn btn-secondary btn-block" hidden>Retry Google sign-in</button>

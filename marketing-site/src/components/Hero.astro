@@ -1,5 +1,6 @@
 ---
-import { brand, cta, askPreview } from '../lib/content';
+import { brand, cta } from '../lib/content';
+import DemoPreview from './DemoPreview.astro';
 ---
 
 <section class="hero-section" aria-labelledby="hero-heading">
@@ -22,46 +23,15 @@ import { brand, cta, askPreview } from '../lib/content';
     
     <div class="hero-actions">
       <a href={cta.startFree.href} class="btn btn-hero">{cta.startFree.label} →</a>
-      <a href={cta.seePlans.href} class="btn btn-ghost">
+      <a href="#try-demo" class="btn btn-ghost">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="margin-right:0.25rem;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-        {cta.seePlans.label}
+        Explore the demo
       </a>
     </div>
+    <p class="hero-start-note">One Google account. Your own shop. No payment needed for a demo.</p>
+    <div id="try-demo" class="hero-demo"><DemoPreview /></div>
 
-    <!-- Interactive Ask Apna Galla Preview -->
-    <div class="hero-preview-card" aria-label="Product Preview">
-      <div class="hero-preview-header">
-        <div class="hero-preview-indicator">
-          <span class="indicator-dot"></span>
-          <span>Live Galla Register</span>
-        </div>
-        <span class="hero-preview-id">TODAY'S INVOICE #108</span>
-      </div>
-      
-      <div class="hero-preview-body">
-        <div class="preview-total-row">
-          <div class="preview-total-col">
-            <span class="preview-label">Total Sales Today</span>
-            <span class="preview-amount">₹48,250</span>
-          </div>
-          <div class="preview-trend">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
-            <span>+18.4%</span>
-          </div>
-        </div>
-        
-        <div class="preview-split">
-          <div class="preview-split-col">
-            <span class="preview-label">Cash Received</span>
-            <span class="preview-value">₹32,100</span>
-          </div>
-          <div class="preview-split-col right">
-            <span class="preview-label">UPI QR Collected</span>
-            <span class="preview-value highlight">₹16,150</span>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </div>
 </section>
 
@@ -166,6 +136,7 @@ import { brand, cta, askPreview } from '../lib/content';
     box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
     text-align: left;
   }
+  .hero-preview-card[hidden]{display:none}.hero-demo{display:flex;justify-content:center;width:100%;scroll-margin-top:6rem}.hero-start-note{font-size:.8rem;color:var(--ag-secondary-fixed-dim);margin-top:-1.6rem;margin-bottom:2rem}.hero-actions .btn-hero{background:#d3f284;color:#193724;font-weight:800;box-shadow:0 8px 28px #001e1933;gap:.5rem}.hero-actions .btn-hero:hover{background:#e2ffa7;transform:translateY(-3px)}
 
   .hero-preview-header {
     display: flex;

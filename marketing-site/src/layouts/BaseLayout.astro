@@ -18,6 +18,7 @@ const {
 } = Astro.props;
 
 const siteName = 'Apna Galla';
+const showMobileCta=!['/signup','/login'].includes(Astro.url.pathname.replace(/\/$/,''));
 ---
 
 <!doctype html>
@@ -65,5 +66,7 @@ const siteName = 'Apna Galla';
       <slot />
     </main>
     <Footer />
+    {showMobileCta&&<aside class="mobile-create-account" aria-label="Get started"><a href="/signup">Create account &amp; get demo <span aria-hidden="true">→</span></a></aside>}
+    <script>import '../scripts/site-motion';</script>
   </body>
 </html>

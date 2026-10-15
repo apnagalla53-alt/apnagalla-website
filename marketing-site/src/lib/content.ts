@@ -5,7 +5,7 @@
 
 export const config = {
   appUrl: import.meta.env.PUBLIC_APP_URL ?? 'https://app.apnagalla.in',
-  apiUrl: import.meta.env.PUBLIC_API_URL ?? '',
+  apiUrl: import.meta.env.PUBLIC_API_URL ?? 'https://api.apnagalla.in',
   siteUrl: import.meta.env.PUBLIC_SITE_URL ?? 'https://apnagalla.in',
 };
 
@@ -26,11 +26,11 @@ export const navLinks = [
 ] as const;
 
 export const cta = {
-  startFree: { label: 'Start Free', href: '/signup' },
+  startFree: { label: 'Create account & get demo', href: '/signup' },
   seePlans: { label: 'See Plans', href: '/pricing' },
   signIn: { label: 'Sign In', href: '/login' },
   contact: { label: 'Contact Support', href: '/contact?reason=support' },
-  requestDemo: { label: 'Request Demo', href: '/contact?reason=demo' },
+  requestDemo: { label: 'Create account & get demo', href: '/signup' },
   viewFeatures: { label: 'View Features', href: '/features' }
 } as const;
 

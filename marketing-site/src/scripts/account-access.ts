@@ -15,7 +15,7 @@ export function initializeWebsiteAccount(root:HTMLElement){
   root.querySelector<HTMLAnchorElement>('[data-continue] a')!.href=destination;
   const device=()=>{let id=localStorage.getItem('evolix-device-id');if(!id){const bytes=crypto.getRandomValues(new Uint8Array(16));bytes[6]=(bytes[6]&15)|64;bytes[8]=(bytes[8]&63)|128;const value=Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');id=[value.slice(0,8),value.slice(8,12),value.slice(12,16),value.slice(16,20),value.slice(20)].join('-');localStorage.setItem('evolix-device-id',id);}return id;};
   const showError=(failure:unknown)=>{error.textContent=failure instanceof Error?failure.message:'Could not sign in. Please retry.';error.hidden=false;status.textContent='';};
-  async function request(endpoint:string,body?:unknown){const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),25000);try{const response=await fetch(api+endpoint,{method:body===undefined?'GET':'POST',credentials:'include',headers:{'Content-Type':'application/json','X-Requested-With':'XMLHttpRequest'},...(body===undefined?{}:{body:JSON.stringify(body)}),signal:controller.signal});let data:any;try{data=await response.json();}catch{throw new Error('The account server is not connected yet. Check the deployment settings.');}if(!response.ok){const message=Array.isArray(data.message)?data.message.join('. '):data.message||'Could not finish sign-in.';throw new Error(message);}return data;}catch(failure){if(failure instanceof DOMException&&failure.name==='AbortError')throw new Error('The account server took too long. Please retry.');throw failure;}finally{clearTimeout(timer);}}
+  async function request(endpoint:string,body?:unknown){const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),70000);try{const response=await fetch(api+endpoint,{method:body===undefined?'GET':'POST',credentials:'include',headers:{'Content-Type':'application/json','X-Requested-With':'XMLHttpRequest'},...(body===undefined?{}:{body:JSON.stringify(body)}),signal:controller.signal});let data:any;try{data=await response.json();}catch{throw new Error('The account server is waking up. Please retry in a moment.');}if(!response.ok){if(data.code==='GOOGLE_ACCOUNT_NOT_REGISTERED')root.querySelector<HTMLElement>('[data-create-account]')!.hidden=false;const message=Array.isArray(data.message)?data.message.join('. '):data.message||'Could not finish sign-in.';throw new Error(message);}return data;}catch(failure){if(failure instanceof DOMException&&failure.name==='AbortError')throw new Error('The account server took too long. Please retry.');throw failure;}finally{clearTimeout(timer);}}
   let busy=false,googleConfigured=false,preparation=0;
   function signedIn(){status.textContent='Signed in. Opening your shop…';root.querySelector<HTMLElement>('[data-continue]')!.hidden=false;location.assign(destination);}
   const form=root.querySelector<HTMLFormElement>('[data-password-form]');
@@ -34,5 +34,11 @@ export function initializeWebsiteAccount(root:HTMLElement){
   }
   async function refreshCapabilities(){try{const caps=await request('/auth/capabilities');googleConfigured=!!caps.google_client_id;if(googleConfigured)void prepareGoogle();else status.textContent='Google sign-in is not configured yet. Existing shop owners can use their password.';}catch(failure){showError(failure);retry.hidden=false;}}
   retry.addEventListener('click',()=>void (googleConfigured?prepareGoogle():refreshCapabilities()));terms?.addEventListener('change',()=>void prepareGoogle());
-  void refreshCapabilities();
+  // Reuse the shared HttpOnly API cookie; the website stores no authentication token.
+  const resume=async()=>{
+    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),70000);
+    try{const response=await fetch(api+'/auth/session',{credentials:'include',signal:controller.signal});if(response.ok){signedIn();return true;}}catch{/* Fresh visitors can still choose a sign-in method. */}finally{clearTimeout(timer);}
+    return false;
+  };
+  void resume().then(existing=>{if(!existing)void refreshCapabilities();});
 }
