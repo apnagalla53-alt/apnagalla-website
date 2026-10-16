@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { glossary } from '../lib/glossary';
+import { SITE } from '../lib/seo';
+const structuredData=[{'@type':'DefinedTermSet',name:'Shopkeeper hisaab glossary',url:SITE+'/glossary/',inLanguage:['en-IN','hi'],hasDefinedTerm:glossary.map(g=>({'@type':'DefinedTerm',name:g.term,description:g.meaning}))}];
+---
+<BaseLayout title="Khata, Hisaab & Vyapaar Glossary for Shops | Apna Galla" description="Understand khata, udhaar, galla, lena-dena, bikri, munafa and everyday shop accounting words with English and Hindi/Hinglish examples." structuredData={structuredData}>
+<section class="section"><div class="container glossary"><p class="eyebrow">THE WORDS AT YOUR COUNTER</p><h1>Khata, hisaab, galla: what each word means.</h1><p class="intro">Different shopkeepers say hisaab, hisab, bahi-khata, dukaan accounts or vyapaar ka hisaab. The useful question is the same: what happened, what is left, and which record explains it?</p><dl>{glossary.map((g,index)=><div id={'term-'+(index+1)}><dt>{g.term}</dt><dd><p>{g.meaning}</p><p class="example">Example: {g.example}</p><a href={g.link}>Explore this workflow →</a></dd></div>)}</dl><p><a href="/blog/">Read the step-by-step shopkeeper guides →</a></p></div></section>
+</BaseLayout>
+<style>.glossary{max-width:54rem}.eyebrow{font-size:.75rem;letter-spacing:.12em;color:var(--ag-primary);font-weight:800}h1{font:800 clamp(2rem,4vw,3rem)/1.2 var(--ag-font-heading);margin:1rem 0}.intro{font-size:1.1rem;line-height:1.8;color:var(--ag-text-secondary)}dl{display:grid;gap:1rem;margin:2rem 0}dl>div{border:1px solid var(--ag-divider);border-radius:18px;background:var(--ag-surface-lowest);padding:1.4rem;scroll-margin-top:7rem}dt{font:800 1.2rem/1.5 var(--ag-font-heading)}dd{margin:0}dd p{line-height:1.8;margin:.8rem 0}.example{color:var(--ag-text-secondary)}a{color:var(--ag-primary);text-decoration:underline;text-underline-offset:4px}</style>

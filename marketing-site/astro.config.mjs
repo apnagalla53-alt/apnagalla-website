@@ -1,7 +1,9 @@
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://apnagalla.in',
+  integrations: [sitemap({filter:page=>!/^\/(?:login|signup|404)(?:\/|\.html|$)/.test(new URL(page).pathname)})],
   compressHTML: true,
   build: {
     inlineStylesheets: 'auto',

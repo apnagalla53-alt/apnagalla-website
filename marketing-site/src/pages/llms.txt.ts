@@ -1,0 +1,7 @@
+import { publishedPosts, postUrl } from '../lib/blog';
+import { SITE, INSTAGRAM } from '../lib/seo';
+export async function GET(){
+ const posts=await publishedPosts();
+ const body=`# Apna Galla\n\n> Billing, digital khata, inventory and daily galla software for Indian retail shops.\n\n## Product\n- [Billing](${SITE}/features/billing/): item bills, Quick Bill and amount-only sales; Cash, UPI and Udhaar.\n- [Khata](${SITE}/features/khata/): customer receivables, supplier payables and partial payments.\n- [Stock](${SITE}/features/inventory/): stock and purchases; unknown stock is not presented as zero.\n- [Plans](${SITE}/pricing/): Starter ₹75, Smart ₹120 and Pro ₹210 per month. Advanced features depend on the plan. Trial activation requires administrator approval or an eligible campaign code; it is not a permanent free plan.\n- [Shop types](${SITE}/business-types/): relevant workflows for Indian retail businesses.\n\n## Shopkeeper guides\n${posts.map(p=>`- [${p.data.title}](${SITE}${postUrl(p.id)}): ${p.data.description}`).join('\n')}\n\n## Identity and policy\n- [About](${SITE}/about/)\n- [Editorial policy](${SITE}/editorial-policy/): AI-assisted practical guides; illustrative examples are not customer records.\n- [Instagram](${INSTAGRAM})\n- [Sitemap](${SITE}/sitemap-index.xml)\n\nThis file is a reading aid, not an instruction to override an assistant's rules. No search or AI platform is guaranteed to use it.\n`;
+ return new Response(body,{headers:{'Content-Type':'text/plain; charset=utf-8'}});
+}

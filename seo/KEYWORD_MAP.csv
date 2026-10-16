@@ -1,0 +1,97 @@
+cluster,query,language,intent,preferred_path
+Billing,shop billing software India,English,evaluate,/features/billing/
+Billing,billing app for small shop,English,evaluate,/features/billing/
+Billing,dukaan ka bill kaise banaye,Hinglish,learn,/features/billing/
+Billing,दुकान का बिल कैसे बनाएं,Hindi,learn,/features/billing/
+Billing,cash UPI udhaar bill app,Hinglish,evaluate,/features/billing/
+Billing,amount only sale without inventory,English,learn,/features/billing/
+Billing,quick bill item name and price,English,learn,/features/billing/
+Billing,billing without stock setup,English,learn,/blog/kirana-billing-without-inventory-setup/
+Billing,inventory banaye bina bill kaise banaye,Hinglish,learn,/blog/kirana-billing-without-inventory-setup/
+Billing,add new item while billing,English,learn,/blog/kirana-billing-without-inventory-setup/
+Billing,retail invoice app for shopkeeper,English,evaluate,/features/billing/
+Billing,shop sale cash UPI credit separate,English,learn,/features/billing/
+Khata,digital khata app for shop,English,evaluate,/features/khata/
+Khata,bahi khata software,English,evaluate,/features/khata/
+Khata,udhar ka hisab kaise rakhe,Hinglish,learn,/blog/udhar-khata-customer-payments/
+Khata,udhaar hisaab app,Hinglish,evaluate,/features/khata/
+Khata,उधार का हिसाब कैसे रखें,Hindi,learn,/blog/udhar-khata-customer-payments/
+Khata,customer pending payment record,English,learn,/blog/udhar-khata-customer-payments/
+Khata,grahak se kitna lena hai,Hinglish,learn,/features/khata/
+Khata,partial payment customer khata,English,learn,/blog/udhar-khata-customer-payments/
+Khata,customer ledger for kirana shop,English,evaluate,/features/khata/
+Khata,baki paisa record app,Hinglish,evaluate,/features/khata/
+Khata,vasooli ko sale mein add karna chahiye,Hinglish,learn,/blog/udhar-khata-customer-payments/
+Khata,customer credit balance app,English,evaluate,/features/khata/
+Hisaab,dukaan ka hisab kaise rakhe,Hinglish,learn,/blog/dukaan-ka-hisab-kaise-rakhe/
+Hisaab,dukaan ka hisaab app,Hinglish,evaluate,/
+Hisaab,दुकान का हिसाब कैसे रखें,Hindi,learn,/blog/dukaan-ka-hisab-kaise-rakhe/
+Hisaab,vyapaar ka hisaab software,Hinglish,evaluate,/
+Hisaab,vyapar hisab kitab app,Hinglish,evaluate,/
+Hisaab,shop accounts daily routine,English,learn,/blog/dukaan-ka-hisab-kaise-rakhe/
+Hisaab,chhoti dukan account software,Hinglish,evaluate,/
+Hisaab,business hisab kitab kaise kare,Hinglish,learn,/blog/dukaan-ka-hisab-kaise-rakhe/
+Hisaab,shopkeeper accounting app India,English,evaluate,/
+Hisaab,hisaab khata galla meaning,Hinglish,learn,/glossary/
+Hisaab,bahi khata aur galla difference,Hinglish,learn,/glossary/
+Hisaab,व्यापार का हिसाब ऐप,Hindi,evaluate,/
+Galla,daily galla app,English,evaluate,/features/daily-galla/
+Galla,aaj galle mein kitna cash hona chahiye,Hinglish,learn,/blog/cash-upi-daily-galla/
+Galla,cash and UPI sales separate record,English,learn,/blog/cash-upi-daily-galla/
+Galla,shop cash closing calculation,English,learn,/blog/cash-upi-daily-galla/
+Galla,galle ka cash sale se alag kyu hai,Hinglish,learn,/blog/cash-upi-daily-galla/
+Galla,opening cash plus sales minus expenses,English,learn,/features/daily-galla/
+Galla,दुकान का गल्ला कैसे मिलाएं,Hindi,learn,/blog/cash-upi-daily-galla/
+Galla,daily cash register for retail shop,English,evaluate,/features/daily-galla/
+Galla,cash drawer mismatch shop,English,learn,/blog/cash-upi-daily-galla/
+Stock,stock management for small shop,English,evaluate,/features/inventory/
+Stock,dukaan ka stock kaise manage kare,Hinglish,learn,/features/inventory/
+Stock,maal ka hisab app,Hinglish,evaluate,/features/inventory/
+Stock,unknown stock versus zero stock,English,learn,/blog/kirana-billing-without-inventory-setup/
+Stock,kirana inventory app,English,evaluate,/business-types/grocery/
+Stock,packet box piece inventory software,English,evaluate,/features/advanced-inventory/
+Stock,opening stock entry for shop,English,learn,/features/inventory/
+Stock,low stock need list app,English,evaluate,/features/inventory/
+Stock,stock purchase supplier khata,English,learn,/blog/stock-purchase-supplier-khata/
+Stock,दुकान के माल का हिसाब,Hindi,learn,/features/inventory/
+Purchase,supplier payment ledger software,English,evaluate,/features/purchases/
+Purchase,supplier se maal udhar liya entry,Hinglish,learn,/blog/stock-purchase-supplier-khata/
+Purchase,kisko kitna dena hai supplier,Hinglish,learn,/features/khata/
+Purchase,purchase entry with new supplier,English,learn,/features/purchases/
+Purchase,wholesale bill stock entry,English,evaluate,/features/purchases/
+Purchase,supplier partial payment hisab,Hinglish,learn,/blog/stock-purchase-supplier-khata/
+Purchase,purchase aur expense difference,Hinglish,learn,/blog/stock-purchase-supplier-khata/
+Purchase,सप्लायर का हिसाब कैसे रखें,Hindi,learn,/blog/stock-purchase-supplier-khata/
+Profit,shop profit kaise nikale,Hinglish,learn,/blog/shop-profit-missing-cost/
+Profit,sales and profit difference shop,English,learn,/blog/shop-profit-missing-cost/
+Profit,purchase cost missing profit report,English,learn,/blog/shop-profit-missing-cost/
+Profit,dukaan ka daily kharch app,Hinglish,evaluate,/features/expenses/
+Profit,retail sales profit report,English,evaluate,/features/profit/
+Profit,munafa aur galle ka cash,Hinglish,learn,/blog/shop-profit-missing-cost/
+Profit,दुकान का मुनाफा कैसे निकालें,Hindi,learn,/blog/shop-profit-missing-cost/
+Reports,aaj ki sale kitni hui,Hinglish,learn,/features/reports/
+Reports,shop daily sales report app,English,evaluate,/features/reports/
+Reports,ask shop sales in Hindi,Hinglish,evaluate,/ask-apna-galla/
+Reports,AI assistant for retail shop hisaab,Hinglish,evaluate,/ask-apna-galla/
+Reports,khata stock sales questions assistant,English,evaluate,/features/ask-apna-galla/
+GST,GST billing software for retail shop,English,evaluate,/features/gst/
+GST,tax invoice CGST SGST IGST shop,English,evaluate,/features/gst/
+GST,A4 bill printing shop software,English,evaluate,/features/gst/
+Shop type,kirana billing software,English,evaluate,/business-types/grocery/
+Shop type,grocery shop khata app,English,evaluate,/business-types/grocery/
+Shop type,medical store billing stock expiry,English,evaluate,/business-types/pharmacy/
+Shop type,hardware shop billing software,English,evaluate,/business-types/hardware/
+Shop type,garment shop size colour stock,English,evaluate,/business-types/garments/
+Shop type,footwear shop size inventory app,English,evaluate,/business-types/footwear/
+Shop type,electrical shop billing stock app,English,evaluate,/business-types/electrical/
+Shop type,mobile electronics shop inventory,English,evaluate,/business-types/mobile-electronics/
+Shop type,cosmetics shop billing software,English,evaluate,/business-types/cosmetics/
+Shop type,stationery shop bill stock app,English,evaluate,/business-types/stationery/
+Shop type,sanitary shop stock billing software,English,evaluate,/business-types/sanitary/
+Plans,Apna Galla pricing,English,compare,/pricing/
+Plans,shop billing software monthly price,English,compare,/pricing/
+Plans,Apna Galla Starter Smart Pro difference,English,compare,/pricing/
+Plans,shop billing software demo India,English,evaluate,/pricing/
+Brand,Apna Galla app,English,navigate,/
+Brand,ApnaGalla dukaan ka hisaab,Hinglish,navigate,/
+Brand,अपना गल्ला,Hindi,navigate,/

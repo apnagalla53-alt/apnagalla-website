@@ -9,6 +9,18 @@
   PUBLIC_SITE_URL = "https://apnagalla.in"
 
 [[redirects]]
+  from = "https://www.apnagalla.in/*"
+  to = "https://apnagalla.in/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap-index.xml"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/api/*"
   to = "https://api.apnagalla.in/api/:splat"
   status = 200

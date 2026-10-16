@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
 import { businessTypes } from '../../lib/content';
+import { businessSearch } from '../../lib/shop-search';
+import ShopFaq from '../../components/ShopFaq.astro';
 
 export function getStaticPaths() {
   return businessTypes.map((type) => ({
@@ -11,9 +13,10 @@ export function getStaticPaths() {
 }
 
 const { type } = Astro.props;
+const guide=businessSearch[type.id];
 ---
 
-<BaseLayout title={`${type.name} Software | Apna Galla`} description={`Manage billing, stock, and khata for your ${type.name} with Apna Galla.`}>
+<BaseLayout title={`${type.name} Billing & Khata Software | Apna Galla`} description={`Manage ${type.name} shop billing, customer khata, supplier dues and stock with Apna Galla. Explore relevant workflows and create an account for a demo.`}>
   <div class="type-hero section">
     <div class="container type-hero-container">
       <div class="type-icon">{type.icon}</div>
@@ -40,10 +43,12 @@ const { type } = Astro.props;
     </div>
   </section>
 
+  {guide&&<><section class="section"><div class="container business-guide"><h2>Billing, stock and hisaab for a {type.name.toLowerCase()} shop</h2><p>{guide.intro}</p><p>Basic billing and khata remain straightforward. Advanced units, variants, GST, photos and serial/warranty features have their respective plan requirements. <a href="/pricing/">Compare plans</a> before choosing a workflow.</p><a href={guide.guide}>Read the related shopkeeper guide →</a></div></section><ShopFaq items={[{question:guide.question,answer:guide.answer}]}/></>}
   <FinalCTA />
 </BaseLayout>
 
 <style>
+  .business-guide{max-width:54rem;line-height:1.9}.business-guide h2{font:800 1.7rem var(--ag-font-heading);margin-bottom:1rem}.business-guide p{margin:1rem 0;color:var(--ag-text-secondary)}.business-guide a{color:var(--ag-primary);text-decoration:underline;text-underline-offset:4px}
   .type-hero {
     background: var(--ag-surface-lowest);
     text-align: center;

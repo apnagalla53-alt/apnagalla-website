@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FinalCTA from '../../components/FinalCTA.astro';
 import { features } from '../../lib/content';
+import FeatureSearchGuide from '../../components/FeatureSearchGuide.astro';
 
 export function getStaticPaths() {
   const dedicatedFeaturePages = new Set(['billing', 'gst', 'inventory', 'khata', 'reports']);
@@ -63,6 +64,7 @@ const { feature } = Astro.props;
     </div>
   </section>
 
+  <FeatureSearchGuide feature={feature.id} />
   <FinalCTA />
 </BaseLayout>
 

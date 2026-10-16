@@ -22,6 +22,7 @@ export const navLinks = [
   { label: 'Business Types', href: '/business-types' },
   { label: 'Ask Apna Galla', href: '/ask-apna-galla' },
   { label: 'Pricing', href: '/pricing' },
+  { label: 'Guides', href: '/blog/' },
   { label: 'Support', href: '/support' },
 ] as const;
 
@@ -80,6 +81,8 @@ export const dataSafety = {
 
 export const footerLinks = {
   product: [
+    { label: 'Shopkeeper Guides', href: '/blog/' },
+    { label: 'Hisaab Glossary', href: '/glossary/' },
     { label: 'Features', href: '/features' },
     { label: 'Pricing', href: '/pricing' },
     { label: 'Business Types', href: '/business-types' },
@@ -98,6 +101,7 @@ export const footerLinks = {
     { label: 'Data Security', href: '/data-security' }
   ],
   company: [
+    { label: 'Editorial Policy', href: '/editorial-policy/' },
     { label: 'About', href: '/about' }
   ],
   legal: [

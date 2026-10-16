@@ -1,0 +1,6 @@
+---
+interface Props { title?:string; items:{question:string;answer:string}[]; }
+const {title='Shopkeeper questions, answered',items}=Astro.props;
+---
+<section class="shop-faq section"><div class="container"><h2>{title}</h2><div class="faq-list">{items.map(item=><details><summary>{item.question}</summary><p>{item.answer}</p></details>)}</div></div></section>
+<style>.shop-faq h2{font:800 clamp(1.4rem,3vw,2rem) var(--ag-font-heading);margin-bottom:1.5rem}.faq-list{max-width:54rem;display:grid;gap:.8rem}.faq-list details{background:var(--ag-surface-lowest);border:1px solid var(--ag-divider);border-radius:16px;padding:1rem 1.25rem}.faq-list summary{min-height:28px;cursor:pointer;font-weight:700;line-height:1.5}.faq-list p{line-height:1.8;color:var(--ag-text-secondary);margin-top:.8rem}.faq-list summary:focus-visible{outline:2px solid var(--ag-primary);outline-offset:5px}</style>

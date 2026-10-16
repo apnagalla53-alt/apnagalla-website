@@ -9,6 +9,9 @@ import AskApnaGallaSection from '../components/AskApnaGallaSection.astro';
 import PricingSection from '../components/PricingSection.astro';
 import FinalCTA from '../components/FinalCTA.astro';
 import { seo } from '../lib/content';
+import GuidesPreview from '../components/GuidesPreview.astro';
+import ShopFaq from '../components/ShopFaq.astro';
+import { homeQuestions } from '../lib/shop-search';
 ---
 
 <BaseLayout 
@@ -22,5 +25,7 @@ import { seo } from '../lib/content';
   <FeatureSection />
   <AskApnaGallaSection />
   <PricingSection />
+  <GuidesPreview />
+  <ShopFaq items={homeQuestions} />
   <FinalCTA />
 </BaseLayout>

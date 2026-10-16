@@ -1,0 +1,8 @@
+---
+import { featureGuides } from '../lib/shop-search';
+import ShopFaq from './ShopFaq.astro';
+const {feature}=Astro.props;
+const guides=featureGuides[feature]||[];
+---
+{guides.length>0&&<><section class="section"><div class="container feature-guide"><h2>How this fits your dukaan ka hisaab</h2>{guides.map(g=><><p>{g.intro}</p><a href={g.guide}>Read a practical shopkeeper guide →</a></>)}</div></section><ShopFaq items={guides.map(g=>({question:g.question,answer:g.answer}))}/></>}
+<style>.feature-guide{max-width:54rem;line-height:1.9}.feature-guide h2{font:800 clamp(1.4rem,3vw,2rem) var(--ag-font-heading);margin-bottom:1rem}.feature-guide p{color:var(--ag-text-secondary);margin-bottom:1rem}.feature-guide a{color:var(--ag-primary);text-decoration:underline;text-underline-offset:4px}</style>
