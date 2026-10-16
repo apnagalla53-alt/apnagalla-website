@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/write-release.mjs",
     "check": "astro check",
     "test:seo": "node --experimental-strip-types --test tests/seo.test.ts",
     "verify": "npm run check && npm run test:demo && npm run build && npm run test:seo",
