@@ -3,8 +3,10 @@
    Design tokens from DESIGN.md
    ═══════════════════════════════════════════════════════════ */
 
-/* ─── Font imports (production-safe via Google Fonts API) ── */
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+/* Versioned, self-hosted Latin variable fonts: no external stylesheet round trip. */
+@font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url('@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2') format('woff2');}
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:200 800;font-display:swap;src:url('@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-latin-wght-normal.woff2') format('woff2');}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:100 800;font-display:swap;src:url('@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2') format('woff2');}
 
 /* ─── Design Tokens ──────────────────────────────────────── */
 :root {
